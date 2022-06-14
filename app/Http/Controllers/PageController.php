@@ -14,4 +14,16 @@ class PageController extends Controller
     {
         return view('front-end.flight');
     }
+    public function hotels()
+    {
+        return view('front-end.hotel');
+    }
+    public function holidays()
+    {
+        return view('front-end.holiday');
+    }
+    public function blogs()
+    {
+        return view('front-end.blog');
+    }
 }

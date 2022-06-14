@@ -20,3 +20,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'homepage'])->name('home');
 Route::get('/flights', [PageController::class, 'flights'])->name('flight');
+Route::get('/hotels', [PageController::class, 'hotels'])->name('hotel');
+Route::get('/holidays', [PageController::class, 'holidays'])->name('holiday');
+Route::get('/blogs', [PageController::class, 'blogs'])->name('blog');
