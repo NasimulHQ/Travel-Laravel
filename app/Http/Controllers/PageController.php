@@ -10,4 +10,8 @@ class PageController extends Controller
     {
         return view('front-end.home');
     }
+    public function flights()
+    {
+        return view('front-end.flight');
+    }
 }

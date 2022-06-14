@@ -28,7 +28,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="{{ ('/') }}"><i class="fa fa-home"
                                     aria-hidden="true"></i>&nbsp;HOME</a></li>
-                        <li><a href="{{ asset('front')}}/flights.html"><i class="fa fa-plane"
+                        <li><a href="{{ ('/flights')}}"><i class="fa fa-plane"
                                     aria-hidden="true"></i>&nbsp;FLIGHTS</a></li>
                         <li><a href="{{ asset('front')}}/hotel.html"><i class="fa fa-building"
                                     aria-hidden="true"></i>&nbsp;HOTELS</a></li>

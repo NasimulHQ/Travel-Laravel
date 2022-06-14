@@ -160,6 +160,16 @@ Home Page
             <!-- end top nav -->
 
         </section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <h1 style="color: #FFF; font-size: 65px;
+    margin-top: 130px;">Welcome To Travel Group</h1>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
 
     </header><!-- end header section -->
 <div class="slider-active owl-carousel owl-theme">
@@ -434,27 +444,5 @@ Home Page
     </div>
 </section><!-- end travel plans -->
 
-<script>
-    new WOW().init();
-	 particlesJS.load('particles-js', 'particles.json', function(){
-      console.log('particles.json loaded...');
-    });
-	 $.fn.extend({
-    animateCss: function (animationName, callback) {
-        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-        this.addClass('animated ' + animationName).one(animationEnd, function() {
-            $(this).removeClass('animated ' + animationName);
-            if (callback) {
-              callback();
-            }
-        });
-        return this;
-    }
-});
- 
-</script>
 
-</body>
-
-</html>
 @endsection

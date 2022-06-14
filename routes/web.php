@@ -19,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [PageController::class, 'homepage'])->name('home');
+Route::get('/flights', [PageController::class, 'flights'])->name('flight');
