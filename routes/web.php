@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\PageController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,6 @@ Route::get('/flights', [PageController::class, 'flights'])->name('flight');
 Route::get('/hotels', [PageController::class, 'hotels'])->name('hotel');
 Route::get('/holidays', [PageController::class, 'holidays'])->name('holiday');
 Route::get('/blogs', [PageController::class, 'blogs'])->name('blog');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

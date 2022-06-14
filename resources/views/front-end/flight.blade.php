@@ -219,27 +219,25 @@ Flight Page
             </div> --}}
             <!-- end Main-Nav -->
 
-            <div class="holidays-header-title">
-                <h2>Choose Your Flights Destination</h2>
-                <div class="holidays-header-form wow animate fadeInRightBig" data-wow-duration="1.5s">
-                    <form>
-                        <div class="row">
-                            <div class="col-md-4 col-sm-4">
-                                <input type="text" placeholder="Form" class="holidays-header-src">
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <input type="text" placeholder="Destination" class="holidays-header-src">
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <input type="text" placeholder="mm/dd/yy" class="holidays-header-src"
-                                    id="flights-header-date">
-                            </div>
+        </div>
+        <div class="holidays-header-title">
+            <h2>Choose Your Flights Destination</h2>
+            <div class="holidays-header-form wow animate fadeInRightBig" data-wow-duration="1.5s">
+                <form>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                            <input type="text" placeholder="Form" class="holidays-header-src">
                         </div>
-                        <button class="flights-header-btn">Check Rates</button>
-                    </form>
-                </div>
+                        <div class="col-md-4 col-sm-4">
+                            <input type="text" placeholder="Destination" class="holidays-header-src">
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <input type="text" placeholder="mm/dd/yy" class="holidays-header-src" id="flights-header-date">
+                        </div>
+                    </div>
+                    <button class="flights-header-btn">Check Rates</button>
+                </form>
             </div>
-
         </div>
     </header><!-- end header section -->
 
