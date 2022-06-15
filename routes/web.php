@@ -19,11 +19,12 @@ use App\Http\Controllers\PageController;
 //     return view('welcome');
 // });
 
-Route::get('/', [PageController::class, 'homepage'])->name('home');
+Route::get('/', [PageController::class, 'homepage'])->name('front.home');
 Route::get('/flights', [PageController::class, 'flights'])->name('flight');
 Route::get('/hotels', [PageController::class, 'hotels'])->name('hotel');
 Route::get('/holidays', [PageController::class, 'holidays'])->name('holiday');
 Route::get('/blogs', [PageController::class, 'blogs'])->name('blog');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
