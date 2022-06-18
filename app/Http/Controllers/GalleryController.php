@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Validation\Rules\Exists;
 
 class GalleryController extends Controller
 {
@@ -123,6 +125,12 @@ class GalleryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $gallery = Gallery::find($id);
+        $destination = 'uploads/gallerys/'. $gallery->galler_image;
+        if(File::Exists($destination)){
+            File::delete($destination);
+        }
+        $gallery->delete();
+        return redirect()->back()->with('status', 'Gallery delete successfully done');
     }
 }

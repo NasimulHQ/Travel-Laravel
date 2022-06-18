@@ -41,7 +41,7 @@ Gallery Dashboard
                             <td>{{ $item->galler_image_title}}</td>
                             <td>
                                 <a href="{{ url('edit-gallery/'.$item->id)}}" class="btn btn-info">Edit</a>
-                                <a href="" class="btn btn-danger">Edit</a>
+                                <a href="{{ url('delete-gallery/'.$item->id)}}" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                     @endforeach

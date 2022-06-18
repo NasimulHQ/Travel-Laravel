@@ -8,7 +8,7 @@ Gallery Dashboard
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>Create Gallery Data</h1>
-        <a class="btn btn-info" href="{{ url('gallerys')}}">Back</a>
+        <a class="btn btn-info" href="{{ url('gallerys')}}">View All</a>
         <ol class="breadcrumb">
             <li><a href="{{ url('/home')}}"><i class="fa fa-dashboard"></i>Home</a></li>
         </ol>
