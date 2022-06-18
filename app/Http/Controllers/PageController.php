@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
     public function homepage()
     {
-        return view('front-end.home');
+        $gallery = Gallery::select('galler_title', 'galler_heading', 'galler_image', 'galler_image_title')
+        ->orderBy('id', 'asc')
+        ->get();
+        return view('front-end.home', compact('gallery'));
     }
     public function flights()
     {
@@ -20,7 +24,10 @@ class PageController extends Controller
     }
     public function holidays()
     {
-        return view('front-end.holiday');
+        $gallery = Gallery::select('galler_title', 'galler_heading', 'galler_image', 'galler_image_title')
+        ->orderBy('id', 'asc')
+        ->get();
+        return view('front-end.holiday', compact('gallery'));
     }
     public function blogs()
     {
