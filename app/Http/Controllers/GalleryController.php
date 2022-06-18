@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -13,7 +14,8 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        //
+        $gallery = Gallery::all();
+        return view('admin.gallery.index', compact('gallery'));
     }
 
     /**
@@ -23,7 +25,7 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.gallery.create');
     }
 
     /**
@@ -34,7 +36,27 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,
+    [
+                'galler_title' => 'required|min:3|max:199|string',
+                'galler_heading' => 'required|min:3|max:199|string',
+                'galler_image' => 'required|image|mimes:jpeg,jpg,gif,png,svg|max:2048',
+                'galler_image_title'=> 'required|min:3|max:199|string'
+    ]);
+    $gallery = new Gallery();
+    $gallery->galler_title = $request->input('galler_title');
+    $gallery->galler_heading = $request->input('galler_heading');
+    if($request->hasFile('galler_image'))
+    {
+        $file = $request->file('galler_image');
+        $extension = $file->getClientOriginalExtension();
+        $filename = time().'.'. $extension;
+        $file->move('uploads/gallerys/', $filename);
+        $gallery->galler_image = $filename;
+    }
+    $gallery->galler_image_title = $request->input('galler_image_title');
+    $gallery->save();
+    return redirect()->back()->with('status', 'Gallery Upload successfully done');
     }
 
     /**

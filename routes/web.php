@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GalleryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
@@ -28,3 +29,8 @@ Route::get('/blogs', [PageController::class, 'blogs'])->name('blog');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Gallery Route
+Route::get('gallerys', [GalleryController::class, 'index']);
+Route::get('add-gallery', [GalleryController::class, 'create']);
+Route::post('add-gallery', [GalleryController::class, 'store']);

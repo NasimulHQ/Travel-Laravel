@@ -26,7 +26,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="treeview">
+            {{-- <li class="treeview">
                 <a href="#">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                     <span class="pull-right-container">
@@ -37,8 +37,8 @@
                     <li><a href="/admin-dashboard/index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
                     <li><a href="/admin-dashboard/index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
                 </ul>
-            </li>
-
+            </li> --}}
+            <li><a href="{{ url('gallerys')}}"><i class="fa fa-laptop"></i> <span>Gallery</span></a></li>
             {{-- <li class="treeview">
                 <a href="#">
                     <i class="fa fa-files-o"></i>
