@@ -39,8 +39,10 @@ Gallery Dashboard
                                 <img src="{{ asset('uploads/gallerys/'.$item->galler_image)}}" height="80px" width="80px" alt="image">
                             </td>
                             <td>{{ $item->galler_image_title}}</td>
-                            <td></td>
-                            <td></td>
+                            <td>
+                                <a href="{{ url('edit-gallery/'.$item->id)}}" class="btn btn-info">Edit</a>
+                                <a href="" class="btn btn-danger">Edit</a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

@@ -34,3 +34,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('gallerys', [GalleryController::class, 'index']);
 Route::get('add-gallery', [GalleryController::class, 'create']);
 Route::post('add-gallery', [GalleryController::class, 'store']);
+Route::get('edit-gallery/{id}', [GalleryController::class, 'edit']);
+Route::put('update-gallery/{id}', [GalleryController::class, 'update']);
+Route::get('delete-gallery/{id}', [GalleryController::class, 'destroy']);

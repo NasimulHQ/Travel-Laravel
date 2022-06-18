@@ -78,7 +78,8 @@ class GalleryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $gallery = Gallery::find($id);
+        return view('admin.gallery.edit', compact('gallery'));
     }
 
     /**
@@ -90,7 +91,28 @@ class GalleryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate(
+            $request,
+            [
+                'galler_title' => 'required|min:3|max:199|string',
+                'galler_heading' => 'required|min:3|max:199|string',
+                'galler_image' => 'required|image|mimes:jpeg,jpg,gif,png,svg|max:2048',
+                'galler_image_title' => 'required|min:3|max:199|string'
+            ]
+        );
+        $gallery = Gallery::find($id);
+        $gallery->galler_title = $request->input('galler_title');
+        $gallery->galler_heading = $request->input('galler_heading');
+        if ($request->hasFile('galler_image')) {
+            $file = $request->file('galler_image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('uploads/gallerys/', $filename);
+            $gallery->galler_image = $filename;
+        }
+        $gallery->galler_image_title = $request->input('galler_image_title');
+        $gallery->update();
+        return redirect()->back()->with('status', 'Gallery Updated successfully done');
     }
 
     /**
