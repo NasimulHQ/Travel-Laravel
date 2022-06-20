@@ -8,8 +8,8 @@
                     <img src="{{ asset('front')}}/image/10.jpg">
                 </div>
                 <div class="col-md-9 col-sm-9 col-xs-9">
-                    <h4><a href="{{ asset('front')}}/#">7 Nights/8 Days Europe</a></h4>
-                    <p><span>$599 </span>onwards</p>
+                    <h4><a href="#">7 Nights/8 Days Europe</a></h4>
+                    <p>$599 onwards</p>
                 </div>
             </div>
         </div>
