@@ -39,6 +39,7 @@
                 </ul>
             </li> --}}
             <li><a href="{{ url('gallerys')}}"><i class="fa fa-laptop"></i> <span>Gallery</span></a></li>
+            <li><a href=""><i class="fa fa-laptop"></i> <span>Popular Destination</span></a></li>
             {{-- <li class="treeview">
                 <a href="#">
                     <i class="fa fa-files-o"></i>

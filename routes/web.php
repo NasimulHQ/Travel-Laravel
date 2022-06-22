@@ -4,6 +4,7 @@ use App\Http\Controllers\GalleryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\testController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,8 +33,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Gallery Route
 Route::get('gallerys', [GalleryController::class, 'index']);
+Route::get('gallerys/{id}', [GalleryController::class, 'show']);
 Route::get('add-gallery', [GalleryController::class, 'create']);
 Route::post('add-gallery', [GalleryController::class, 'store']);
 Route::get('edit-gallery/{id}', [GalleryController::class, 'edit']);
 Route::put('update-gallery/{id}', [GalleryController::class, 'update']);
 Route::get('delete-gallery/{id}', [GalleryController::class, 'destroy']);
+
+Route::get('test', [testController::class, 'index']);
