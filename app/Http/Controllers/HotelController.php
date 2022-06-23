@@ -131,12 +131,12 @@ class HotelController extends Controller
      */
     public function destroy($id)
     {
-        // $hotel = Hotel::find($id);
-        // $destination = 'uploads/hotels/' . $hotel->hotel_image;
-        // if (File::Exists($destination)) {
-        //     File::delete($destination);
-        // }
-        // $hotel->delete();
-        // return redirect()->back()->with('status', 'Hotel delete successfully done');
+        $hotel = Hotel::find($id);
+        $destination = 'uploads/hotels/' . $hotel->hotel_image;
+        if (File::Exists($destination)) {
+            File::delete($destination);
+        }
+        $hotel->delete();
+        return redirect()->back()->with('status', 'Hotel delete successfully done');
     }
 }
