@@ -12,7 +12,7 @@ Admin Dashboard
         </h1>
         <a class="btn btn-info" href="{{ url('hotels')}}">Back</a>
         <ol class="breadcrumb">
-            <li><a href="{{ url('/')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="{{ url('/home')}}"><i class="fa fa-dashboard"></i> Home</a></li>
         </ol>
     </section>
 
