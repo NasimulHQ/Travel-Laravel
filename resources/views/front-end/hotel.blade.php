@@ -215,8 +215,9 @@ Hotel Page
                                         aria-hidden="true"></i>&nbsp;&nbsp;modify search result</button>
                             </div>
                             <div class="modify-search-dropdown">
+                               <form action="{{ url('search')}}" method="GET">
                                 <p>loaction *</p>
-                                <input type="text" placeholder="Dhaka" class="modify-src" title="Where will you visit?">
+                                <input type="text" name="query" placeholder="Dhaka" class="modify-src" title="Where will you visit?">
                                 <p>Departure *</p>
                                 <input type="text" placeholder="mm/dd/yy" class="modify-src sm-form-control2">
                                 <p>arrival *</p>
@@ -242,6 +243,7 @@ Hotel Page
                                     </div>
                                 </div>
                                 <button class="modify-dropdown-btn">search</button>
+                               </form>
                             </div>
                         </div>
                         <!-- hotel left price -->

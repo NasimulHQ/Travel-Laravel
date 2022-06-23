@@ -139,4 +139,11 @@ class HotelController extends Controller
         $hotel->delete();
         return redirect()->back()->with('status', 'Hotel delete successfully done');
     }
+    public function search()
+    {
+        $search_tex = $_GET['query'];
+        $hotel = Hotel::where('hotel_location', 'LIKE', '%'.$search_tex.'%')->get();
+
+        return view('front-end.hotel', compact('hotel'));
+    }
 }

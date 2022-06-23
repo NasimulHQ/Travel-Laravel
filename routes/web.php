@@ -51,3 +51,4 @@ Route::post('add-hotel', [HotelController::class, 'store']);
 Route::get('edit-hotel/{id}', [HotelController::class, 'edit']);
 Route::put('update-hotel/{id}', [HotelController::class, 'update']);
 Route::get('delete-hotel/{id}', [HotelController::class, 'destroy']);
+Route::get('search', [HotelController::class, 'search']);
