@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\HotelController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
@@ -40,4 +41,10 @@ Route::get('edit-gallery/{id}', [GalleryController::class, 'edit']);
 Route::put('update-gallery/{id}', [GalleryController::class, 'update']);
 Route::get('delete-gallery/{id}', [GalleryController::class, 'destroy']);
 
+// test ajax
 Route::get('test', [testController::class, 'index']);
+
+// Hotel Route
+Route::get('hotels', [HotelController::class, 'index']);
+Route::get('add-hotel', [HotelController::class, 'create']);
+Route::post('add-hotel', [HotelController::class, 'store']);
