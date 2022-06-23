@@ -48,3 +48,6 @@ Route::get('test', [testController::class, 'index']);
 Route::get('hotels', [HotelController::class, 'index']);
 Route::get('add-hotel', [HotelController::class, 'create']);
 Route::post('add-hotel', [HotelController::class, 'store']);
+Route::get('edit-hotel/{id}', [HotelController::class, 'edit']);
+Route::put('update-hotel/{id}', [HotelController::class, 'update']);
+// Route::get('delete-hotel/{id}', [HotelController::class, 'destroy']);
