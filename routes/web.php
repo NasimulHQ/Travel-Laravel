@@ -24,7 +24,7 @@ use App\Http\Controllers\testController;
 
 Route::get('/', [PageController::class, 'homepage'])->name('front.home');
 Route::get('/flights', [PageController::class, 'flights'])->name('flight');
-Route::get('/hotels', [PageController::class, 'hotels'])->name('hotel');
+Route::get('/hotel', [PageController::class, 'hotel'])->name('hotel');
 Route::get('/holidays', [PageController::class, 'holidays'])->name('holiday');
 Route::get('/blogs', [PageController::class, 'blogs'])->name('blog');
 

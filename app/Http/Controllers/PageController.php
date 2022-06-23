@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gallery;
+use App\Models\Hotel;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -18,9 +19,12 @@ class PageController extends Controller
     {
         return view('front-end.flight');
     }
-    public function hotels()
+    public function hotel()
     {
-        return view('front-end.hotel');
+        $hotel = Hotel::select('hotel_image', 'hotel_title', 'hotel_location', 'hotel_price')
+        ->orderBy('id', 'asc')
+        ->get();
+        return view('front-end.hotel', compact('hotel'));
     }
     public function holidays()
     {

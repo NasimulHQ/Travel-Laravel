@@ -415,211 +415,58 @@ Hotel Page
                 <div class="col-md-9 col-sm-9">
                     <div class="hotel-list-right">
 
-                        <div class="first-hotel wow animate bounceIn" data-wow-duration="2s" style="animation-delay:1s">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img src="{{ asset('front') }}/image/21.jpg">
-                                </div>
-                                <div class="col-md-6 col-sm-6">
-                                    <h2>Hotel Orchard Suites</h2>
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star "></span>
-                                                <span class="fa fa-star"></span>
-                                                &nbsp;&nbsp;/
-                                            </td>
-                                            <td>
-                                                <p class="map-p"><i class="fa fa-map-o" aria-hidden="true"></i>&nbsp;
-                                                    View Map &nbsp; / </p>
-                                            </td>
-                                            <td>
-                                                <p>&nbsp;<i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;24
-                                                    Reviews</p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <ul>
-                                        <li><i class="fa fa-wifi" aria-hidden="true" title="wifi"></i></li>
-                                        <li><i class="fa fa-glass" aria-hidden="true" title="Bar"></i></li>
-                                        <li><i class="fa fa-random" aria-hidden="true" title="A/C"></i></li>
-                                        <li><i class="fa fa-cutlery" aria-hidden="true" title="Resturant"></i></li>
-                                        <li style="background:#d1d1d1;"><i class="fa fa-arrows-h" aria-hidden="true"
-                                                title="GYM not Avilable"></i></li>
-                                        <li><i class="fa fa-bell" aria-hidden="true" title="Room Service"></i></li>
-                                        <li><i class="fa fa-coffee" aria-hidden="true" title="Cafe"></i></li>
-                                    </ul>
-                                    <p class="hotel-title">
-                                        89 reviews
-                                        #20 of 83 Hotels in Dhaka City
-                                        Road 13/A, House 90, Block C, Banani, Dhaka City 1213, Bangladesh
-
-                                    </p>
-                                </div>
-                                <div class="col-md-2 col-sm-2">
-                                    <h1>$100</h1>
-                                    <h5>Price per Night</h5>
-                                    <button class="hotel-right-btn">book now</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="first-hotel wow animate bounceIn" data-wow-duration="2s"
-                            style="animation-delay:1.5s">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img src="{{ asset('front') }}/image/22.jpg">
-                                </div>
-                                <div class="col-md-6 col-sm-6">
-                                    <h2>Six Seasons Hotel</h2>
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star "></span>&nbsp;&nbsp;/
-                                            </td>
-                                            <td>
-                                                <p><i class="fa fa-map-o" aria-hidden="true"></i>&nbsp; View Map &nbsp;
-                                                    / </p>
-                                            </td>
-                                            <td>
-                                                <p>&nbsp;<i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;24
-                                                    Reviews</p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <ul>
-                                        <li><i class="fa fa-wifi" aria-hidden="true" title="wifi"></i></li>
-                                        <li><i class="fa fa-glass" aria-hidden="true" title="Bar"></i></li>
-                                        <li><i class="fa fa-random" aria-hidden="true" title="A/C"></i></li>
-                                        <li><i class="fa fa-cutlery" aria-hidden="true" title="Resturant"></i></li>
-                                        <li><i class="fa fa-arrows-h" aria-hidden="true" title="GYM"></i></li>
-                                        <li><i class="fa fa-bell" aria-hidden="true" title="Room Service"></i></li>
-                                        <li><i class="fa fa-coffee" aria-hidden="true" title="Cafe"></i></li>
-                                    </ul>
-                                    <p class="hotel-title">
-                                        371 reviews
-                                        #3 of 83 Hotels in Dhaka City
-                                        Nr 96 House Nr 19 Road | Gulshan 2, Dhaka City 1212, Bangladesh
-
-                                    </p>
-                                </div>
-                                <div class="col-md-2 col-sm-2">
-                                    <h1>$100</h1>
-                                    <h5>Price per Night</h5>
-                                    <button class="hotel-right-btn">book now</button>
+                       @foreach ($hotel as $show)
+                           <div class="first-hotel wow animate bounceIn" data-wow-duration="2s" style="animation-delay:1s">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img src="{{ asset('uploads/hotels/'.$show->hotel_image)}}" alt="image">
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <h2>{{$show->hotel_title}}</h2>
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star "></span>
+                                                    <span class="fa fa-star"></span>
+                                                    &nbsp;&nbsp;/
+                                                </td>
+                                                <td>
+                                                    <p class="map-p"><i class="fa fa-map-o" aria-hidden="true"></i>&nbsp;
+                                                        View Map &nbsp; / </p>
+                                                </td>
+                                                <td>
+                                                    <p>&nbsp;<i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;24
+                                                        Reviews</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <ul>
+                                            <li><i class="fa fa-wifi" aria-hidden="true" title="wifi"></i></li>
+                                            <li><i class="fa fa-glass" aria-hidden="true" title="Bar"></i></li>
+                                            <li><i class="fa fa-random" aria-hidden="true" title="A/C"></i></li>
+                                            <li><i class="fa fa-cutlery" aria-hidden="true" title="Resturant"></i></li>
+                                            <li style="background:#d1d1d1;"><i class="fa fa-arrows-h" aria-hidden="true"
+                                                    title="GYM not Avilable"></i></li>
+                                            <li><i class="fa fa-bell" aria-hidden="true" title="Room Service"></i></li>
+                                            <li><i class="fa fa-coffee" aria-hidden="true" title="Cafe"></i></li>
+                                        </ul>
+                                        <p class="hotel-title">
+                                            {{ $show->hotel_location}}
+                                        </p>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2">
+                                        <h1>{{ $show->hotel_price}}</h1>
+                                        <h5>Price per Night</h5>
+                                        <button class="hotel-right-btn">book now</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                       @endforeach
 
-                        <div class="first-hotel wow animate bounceIn" data-wow-duration="2s" style="animation-delay:2s">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img src="{{ asset('front') }}/image/23.jpg">
-                                </div>
-                                <div class="col-md-6 col-sm-6">
-                                    <h2>Hotel Sarina Dhaka</h2>
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>&nbsp;&nbsp;/
-                                            </td>
-                                            <td>
-                                                <p><i class="fa fa-map-o" aria-hidden="true"></i>&nbsp; View Map &nbsp;
-                                                    / </p>
-                                            </td>
-                                            <td>
-                                                <p>&nbsp;<i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;24
-                                                    Reviews</p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <ul>
-                                        <li><i class="fa fa-wifi" aria-hidden="true" title="wifi"></i></li>
-                                        <li><i class="fa fa-glass" aria-hidden="true" title="Bar"></i></li>
-                                        <li><i class="fa fa-random" aria-hidden="true" title="A/C"></i></li>
-                                        <li><i class="fa fa-cutlery" aria-hidden="true" title="Resturant"></i></li>
-                                        <li><i class="fa fa-arrows-h" aria-hidden="true" title="GYM"></i></li>
-                                        <li><i class="fa fa-bell" aria-hidden="true" title="Room Service"></i></li>
-                                        <li><i class="fa fa-coffee" aria-hidden="true" title="Cafe"></i></li>
-                                    </ul>
-                                    <p class="hotel-title">
-                                        240 reviews
-                                        #17 of 83 Hotels in Dhaka City
-                                        # 17 Plot #27 Road | Banani C/A, Dhaka City 1213, Bangladesh
-
-                                    </p>
-                                </div>
-                                <div class="col-md-2 col-sm-2">
-                                    <h1>$120</h1>
-                                    <h5>Price per Night</h5>
-                                    <button class="hotel-right-btn">book now</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="first-hotel wow animate bounceIn" data-wow-duration="2s"
-                            style="animation-delay:2.5s">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img src="{{ asset('front') }}/image/24.jpg">
-                                </div>
-                                <div class="col-md-6 col-sm-6">
-                                    <h2>Platinum Grand</h2>
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star "></span>
-                                                <span class="fa fa-star "></span>
-                                                <span class="fa fa-star"></span>&nbsp;&nbsp;/
-                                            </td>
-                                            <td>
-                                                <p><i class="fa fa-map-o" aria-hidden="true"></i>&nbsp; View Map &nbsp;
-                                                    / </p>
-                                            </td>
-                                            <td>
-                                                <p>&nbsp;<i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;24
-                                                    Reviews</p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <ul>
-                                        <li><i class="fa fa-wifi" aria-hidden="true" title="wifi"></i></li>
-                                        <li style="background:#d1d1d1;"><i class="fa fa-glass" aria-hidden="true"
-                                                title="Bar not Avilable"></i></li>
-                                        <li><i class="fa fa-random" aria-hidden="true" title="A/C"></i></li>
-                                        <li><i class="fa fa-cutlery" aria-hidden="true" title="Resturant"></i></li>
-                                        <li style="background:#d1d1d1;"><i class="fa fa-arrows-h" aria-hidden="true"
-                                                title="GYM not Avilable"></i></li>
-                                        <li><i class="fa fa-bell" aria-hidden="true" title="Room Service"></i></li>
-                                        <li><i class="fa fa-coffee" aria-hidden="true" title="Cafe"></i></li>
-                                    </ul>
-                                    <p class="hotel-title">
-                                        55 reviews
-                                        #16 of 83 Hotels in Dhaka City
-                                        no. 11 House #52 Road | Block-F, Banani, Dhaka City 1213, Bangladesh
-
-                                    </p>
-                                </div>
-                                <div class="col-md-2 col-sm-2">
-                                    <h1>$99.99</h1>
-                                    <h5>Price per Night</h5>
-                                    <button class="hotel-right-btn">book now</button>
-                                </div>
-                            </div>
-                        </div>
+                       
 
                         <div class="next-page">
                             <ul>
