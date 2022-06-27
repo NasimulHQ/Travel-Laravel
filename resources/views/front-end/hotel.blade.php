@@ -1,6 +1,6 @@
 @extends('front-end.layout.master')
 @section('title')
-Hotel Page 
+Hotel Page
 @endsection
 @section('content')
 <!DOCTYPE html>
@@ -215,35 +215,36 @@ Hotel Page
                                         aria-hidden="true"></i>&nbsp;&nbsp;modify search result</button>
                             </div>
                             <div class="modify-search-dropdown">
-                               <form action="{{ url('search')}}" method="GET">
-                                <p>loaction *</p>
-                                <input type="text" name="query" placeholder="Dhaka" class="modify-src" title="Where will you visit?">
-                                <p>Departure *</p>
-                                <input type="text" placeholder="mm/dd/yy" class="modify-src sm-form-control2">
-                                <p>arrival *</p>
-                                <input type="text" placeholder="mm/dd/yy" class="modify-src sm-form-control2">
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-6 col-xs-6">
-                                        <p>ADULTS *</p>
-                                        <select class="sm-form" name="currency">
-                                            <option value="en-US">1</option>
-                                            <option value="de-DE">2</option>
-                                            <option value="ja-JP">3</option>
-                                            <option value="ja-JP">4</option>
-                                        </select>
+                                <form id="user-search" action="{{ url('search')}}" method="GET">
+                                    <p>loaction *</p>
+                                    <input type="text" name="query" placeholder="Dhaka" class="modify-src"
+                                        title="Where will you visit?">
+                                    <p>Departure *</p>
+                                    <input type="text" placeholder="mm/dd/yy" class="modify-src sm-form-control2">
+                                    <p>arrival *</p>
+                                    <input type="text" placeholder="mm/dd/yy" class="modify-src sm-form-control2">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-6">
+                                            <p>ADULTS *</p>
+                                            <select class="sm-form" name="currency">
+                                                <option value="en-US">1</option>
+                                                <option value="de-DE">2</option>
+                                                <option value="ja-JP">3</option>
+                                                <option value="ja-JP">4</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-6">
+                                            <p>CHILDREN *</p>
+                                            <select class="sm-form" name="currency">
+                                                <option value="en-US">1</option>
+                                                <option value="de-DE">2</option>
+                                                <option value="ja-JP">3</option>
+                                                <option value="ja-JP">4</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-6">
-                                        <p>CHILDREN *</p>
-                                        <select class="sm-form" name="currency">
-                                            <option value="en-US">1</option>
-                                            <option value="de-DE">2</option>
-                                            <option value="ja-JP">3</option>
-                                            <option value="ja-JP">4</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <button class="modify-dropdown-btn">search</button>
-                               </form>
+                                    <button type="submit" class="modify-dropdown-btn">search</button>
+                                </form>
                             </div>
                         </div>
                         <!-- hotel left price -->
@@ -417,71 +418,56 @@ Hotel Page
                 <div class="col-md-9 col-sm-9">
                     <div class="hotel-list-right">
 
-                       @foreach ($hotel as $show)
-                           <div class="first-hotel wow animate bounceIn" data-wow-duration="2s" style="animation-delay:1s">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <img src="{{ asset('uploads/hotels/'.$show->hotel_image)}}" alt="image">
-                                    </div>
-                                    <div class="col-md-6 col-sm-6">
-                                        <h2>{{$show->hotel_title}}</h2>
-                                        <table>
-                                            <tr>
-                                                <td>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star "></span>
-                                                    <span class="fa fa-star"></span>
-                                                    &nbsp;&nbsp;/
-                                                </td>
-                                                <td>
-                                                    <p class="map-p"><i class="fa fa-map-o" aria-hidden="true"></i>&nbsp;
-                                                        View Map &nbsp; / </p>
-                                                </td>
-                                                <td>
-                                                    <p>&nbsp;<i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;24
-                                                        Reviews</p>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <ul>
-                                            <li><i class="fa fa-wifi" aria-hidden="true" title="wifi"></i></li>
-                                            <li><i class="fa fa-glass" aria-hidden="true" title="Bar"></i></li>
-                                            <li><i class="fa fa-random" aria-hidden="true" title="A/C"></i></li>
-                                            <li><i class="fa fa-cutlery" aria-hidden="true" title="Resturant"></i></li>
-                                            <li style="background:#d1d1d1;"><i class="fa fa-arrows-h" aria-hidden="true"
-                                                    title="GYM not Avilable"></i></li>
-                                            <li><i class="fa fa-bell" aria-hidden="true" title="Room Service"></i></li>
-                                            <li><i class="fa fa-coffee" aria-hidden="true" title="Cafe"></i></li>
-                                        </ul>
-                                        <p class="hotel-title">
-                                            {{ $show->hotel_location}}
-                                        </p>
-                                    </div>
-                                    <div class="col-md-2 col-sm-2">
-                                        <h1>{{ $show->hotel_price}}</h1>
-                                        <h5>Price per Night</h5>
-                                        <button class="hotel-right-btn">book now</button>
-                                    </div>
+                        @foreach ($hotel as $show)
+                        <div class="first-hotel wow animate bounceIn" data-wow-duration="2s" style="animation-delay:1s">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="{{ asset('uploads/hotels/'.$show->hotel_image)}}" alt="image">
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <h2>{{$show->hotel_title}}</h2>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star "></span>
+                                                <span class="fa fa-star"></span>
+                                                &nbsp;&nbsp;/
+                                            </td>
+                                            <td>
+                                                <p class="map-p"><i class="fa fa-map-o" aria-hidden="true"></i>&nbsp;
+                                                    View Map &nbsp; / </p>
+                                            </td>
+                                            <td>
+                                                <p>&nbsp;<i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;24
+                                                    Reviews</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <ul>
+                                        <li><i class="fa fa-wifi" aria-hidden="true" title="wifi"></i></li>
+                                        <li><i class="fa fa-glass" aria-hidden="true" title="Bar"></i></li>
+                                        <li><i class="fa fa-random" aria-hidden="true" title="A/C"></i></li>
+                                        <li><i class="fa fa-cutlery" aria-hidden="true" title="Resturant"></i></li>
+                                        <li style="background:#d1d1d1;"><i class="fa fa-arrows-h" aria-hidden="true"
+                                                title="GYM not Avilable"></i></li>
+                                        <li><i class="fa fa-bell" aria-hidden="true" title="Room Service"></i></li>
+                                        <li><i class="fa fa-coffee" aria-hidden="true" title="Cafe"></i></li>
+                                    </ul>
+                                    <p class="hotel-title">
+                                        {{ $show->hotel_location}}
+                                    </p>
+                                </div>
+                                <div class="col-md-2 col-sm-2">
+                                    <h1>{{ $show->hotel_price}}</h1>
+                                    <h5>Price per Night</h5>
+                                    <button class="hotel-right-btn">book now</button>
                                 </div>
                             </div>
-                       @endforeach
-
-                       
-
-                        <div class="next-page">
-                            <ul>
-                                <li><a href="hotel.html"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
-                                <li style="background:#AC4147;"><a href="hotel.html" style="color:#fff;">1</a></li>
-                                <li><a href="hotel2.html">2</a></li>
-                                <li><a href="hotel3.html">3</a></li>
-                                <li><a href="hotel4.html">4</a></li>
-                                <li><a href="hotel2.html"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                                </li>
-                            </ul>
                         </div>
-
+                        @endforeach
 
                     </div>
                 </div>
@@ -490,7 +476,7 @@ Hotel Page
     </section><!-- end hotel list section --->
 
 
-    
+
 
 
 
@@ -503,6 +489,25 @@ Hotel Page
       console.log('particles.json loaded...');
     });
 	new WOW().init();
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#user-search").on('submit', function(e){
+                e.preventDefault();
+                console.log($(this).serialize());
+                 let url = "/extra";
+                 $.ajax({
+                type: "GET",
+                url: url,
+                dataType:"json",
+                success: function(response){
+                console.log(response)
+                }
+                });
+            })
+
+            
+        })
     </script>
 </body>
 

@@ -45,7 +45,7 @@ class HotelController extends Controller
                 'hotel_location' => 'required|min:3|max:199|string',
                 'hotel_price' => 'required|min:3|max:199|string',
                 // 'hotel_rating' => 'required|min:3|max:199|string'
-                
+
             ]
         );
         $hotel = new Hotel();
@@ -58,7 +58,7 @@ class HotelController extends Controller
         }
         $hotel->hotel_title = $request->input('hotel_title');
         $hotel->hotel_location = $request->input('hotel_location');
-        $hotel->hotel_price = $request->input('hotel_price');    
+        $hotel->hotel_price = $request->input('hotel_price');
         $hotel->hotel_rating = $request->input('hotel_rating');
         $hotel->save();
         return redirect()->back()->with('status', 'Hotel Upload successfully done');
@@ -139,11 +139,17 @@ class HotelController extends Controller
         $hotel->delete();
         return redirect()->back()->with('status', 'Hotel delete successfully done');
     }
-    public function search()
+    public function search(Request $request)
     {
-        $search_tex = $_GET['query'];
-        $hotel = Hotel::where('hotel_location', 'LIKE', '%'.$search_tex.'%')->get();
+        // dd($request->get('query'));
+        $search_text = $request->get('query');
+        $hotel = Hotel::where('hotel_location', 'LIKE', '%' . $search_text . '%')->get();
 
         return view('front-end.hotel', compact('hotel'));
+    }
+    public function extra()
+    {
+        $hotel = Hotel::all();
+        return view('front-end.hotelShow', compact('hotel'));
     }
 }
