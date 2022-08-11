@@ -227,7 +227,7 @@ Home Page
 <!-- end gallery section -->
 
 <!-- start google map section -->
-<section class="map-section">
+{{-- <section class="map-section">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8 col-sm-8">
@@ -239,15 +239,16 @@ Home Page
             @include('front-end.layout.ppdestination')
         </div>
     </div>
-</section><!-- end google map section -->
+</section> --}}
+<!-- end google map section -->
 
 <!-- favourite package -->
-<section class="favourite-package">
+{{-- <section class="favourite-package">
     <div class="container-fluid">
         <h1>Cant't find your Favouritr Package?<span><a href="{{ asset('front')}}/#">Browse Packages&nbsp;<i
                         class="fa fa-caret-right" aria-hidden="true"></i></a></span></h1>
     </div>
-</section>
+</section> --}}
 
 <!-- start blog section -->
 <section class="blog-section">

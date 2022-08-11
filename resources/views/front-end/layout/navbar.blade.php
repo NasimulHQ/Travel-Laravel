@@ -32,8 +32,8 @@
                                     aria-hidden="true"></i>&nbsp;FLIGHTS</a></li>
                         <li><a href="{{ ('/hotel')}}"><i class="fa fa-building"
                                     aria-hidden="true"></i>&nbsp;HOTELS</a></li>
-                        <li><a href="{{ ('/holidays')}}"><i class="fa fa-gift"
-                                    aria-hidden="true"></i>&nbsp;HOLIDAY</a></li>
+                        {{-- <li><a href="{{ ('/holidays')}}"><i class="fa fa-gift"
+                                    aria-hidden="true"></i>&nbsp;HOLIDAY</a></li> --}}
                         <li><a href="{{ ('/blogs')}}"><i class="fa fa-pencil"
                                     aria-hidden="true"></i>&nbsp;BLOG</a></li>
                         <li><a href="{{ asset('/blogs')}}/#"><i class="fa fa-phone"

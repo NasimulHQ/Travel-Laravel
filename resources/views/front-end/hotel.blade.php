@@ -462,8 +462,9 @@ Hotel Page
                                 </div>
                                 <div class="col-md-2 col-sm-2">
                                     <h1>{{ $show->hotel_price}}</h1>
-                                    <h5>Price per Night</h5>
-                                    <button class="hotel-right-btn">book now</button>
+                                    <h5>Price per Night</h5><br>
+                                    <a href="" class="hotel-right-btn">Book now</a>
+                                    {{-- <button class="hotel-right-btn">book now</button> --}}
                                 </div>
                             </div>
                         </div>
