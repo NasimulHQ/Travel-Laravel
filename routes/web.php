@@ -57,4 +57,4 @@ Route::get('search', [HotelController::class, 'search']);
 Route::get('extra', [HotelController::class, 'extra']);
 
 // book now
-
+Route::get('book-now', [HotelController::class, 'booknow']);
