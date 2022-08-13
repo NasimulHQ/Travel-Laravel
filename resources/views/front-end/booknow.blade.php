@@ -53,25 +53,20 @@ Hotel Booking Details Page
             <div class="card-body">
                 
                 <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <h1>Hotel Title</h1>
-                    <img src="" alt="image">
-                    <h3>Hotel Location</h3>
-                    <h3>Price</h3>
-                    <a href="" class="btn btn-primary">Book</a>
-                </div>
+                
+                    <div class="col-md-6">
+                        <h1>Hotel Title:</h1>
+                        <img src="" alt="image">
+                        <h3>Hotel Location</h3>
+                        <h3>Price</h3>
+                        <a href="" class="btn btn-primary">Book</a>
+                    </div>
+                
                 <div class="col-md-3"></div>
             </div>
         </div>
     </div>
 </div>   
-
-
-
-
-
-  
-
 </body>
 
 </html>

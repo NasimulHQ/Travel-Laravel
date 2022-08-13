@@ -53,8 +53,8 @@ Route::put('update-hotel/{id}', [HotelController::class, 'update']);
 Route::get('delete-hotel/{id}', [HotelController::class, 'destroy']);
 Route::get('search', [HotelController::class, 'search']);
 
-//ajax. without load...
+//ajax...
 Route::get('extra', [HotelController::class, 'extra']);
 
-// book now
+//Hotel details
 Route::get('book-now', [HotelController::class, 'booknow']);
