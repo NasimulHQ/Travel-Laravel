@@ -44,29 +44,70 @@ Hotel Booking Details Page
         </div>
     </header><!-- end header section -->
 
-<div class="container mt-3">
-    <div class="row">
-        <div class="card">
-            <div class="card-header" style="margin-top: 10px; border-radius: 15px;">
-            
-            </div>
-            <div class="card-body">
-                
-                <div class="col-md-3"></div>
-                
-                    <div class="col-md-6">
-                        <h1>Hotel Title:</h1>
-                        <img src="" alt="image">
-                        <h3>Hotel Location</h3>
-                        <h3>Price</h3>
-                        <a href="" class="btn btn-primary">Book</a>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="card" style="">
+            <div class="card-header" style="margin-top: 10px; border-radius: 15px;"></div>
+                <div class="card-body">
+
+                    <div class="col-md-2"></div>
+                    <div class="col-sm-8">
+                        <div class="card">
+                            <div class="image">
+                            <img src="{{ asset('uploads/hotels/'.$hotel->hotel_image)}}"  height="280px" alt="image">
+                            </div>
+                            <div class="card-inner">
+                                <div class="header">
+                                    <h2>Name: {{$hotel->hotel_title}}</h2>
+                                    <h3>Location: {{$hotel->hotel_location}}</h2>
+                                    <h3>Price: {{$hotel->hotel_price}}</h2>
+                                </div>
+                                <a href="" class="btn btn-primary">Book</a>
+                                {{-- <div class="content">
+                                    <p>{{$hotel->hotel_price}}</p>
+                                </div> --}}
+                            </div>
+                        </div>
                     </div>
-                
-                <div class="col-md-3"></div>
+
+                    <div class="col-md-2"></div>
+                    
+                </div>
             </div>
         </div>
     </div>
-</div>   
+ <style>
+    /* body {
+    background: #eeeded;
+    } */
+    
+    .card {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+    margin-top:10px;
+    margin-bottom:10px;
+    background-color:#FFF;
+    }
+    
+    .card:hover {
+    box-shadow: 0 5px 5px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+    .card > .card-inner {
+    padding:10px;
+    }
+    .card .header h2, h3 {
+    margin-bottom: 0px;
+    margin-top:0px;
+    }
+    .card .header {
+    margin-bottom:5px;
+    }
+    .card img{
+    width:100%;
+    }
+ </style>
+
 </body>
 
 </html>

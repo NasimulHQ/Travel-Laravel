@@ -417,7 +417,7 @@ Hotel Page
                 </div>
                 <div class="col-md-9 col-sm-9">
                     <div class="hotel-list-right">
-
+                        
                         @foreach ($hotel as $show)
                         <div class="first-hotel wow animate bounceIn" data-wow-duration="2s" style="animation-delay:1s">
                             <div class="row">
@@ -463,7 +463,8 @@ Hotel Page
                                 <div class="col-md-2 col-sm-2">
                                     <h1>{{ $show->hotel_price}}</h1>
                                     <h5>Price per Night</h5><br>
-                                    <a href="{{ url('book-now') }}" class="hotel-right-btn">Book now</a>
+                                    <a href="{{ route('book-now', ['id'=>$show->id]) }}" class="hotel-right-btn">Book
+                                        now</a>
                                     {{-- <button class="hotel-right-btn">book now</button> --}}
                                 </div>
                             </div>

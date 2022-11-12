@@ -152,10 +152,12 @@ class HotelController extends Controller
         $hotel = Hotel::all();
         return view('front-end.hotelShow', compact('hotel'));
     }
-   public function booknow(){
-    $hotel = Hotel::All();
-    return view('front-end.booknow', compact('hotel'));
-
-   }
-
+    public function bookNow($id)
+    {
+        $hotel = Hotel::find($id);
+        if (!$hotel) {
+            return redirect()->to('hotel');
+        }
+        return view('front-end.booknow', compact('hotel'));
+    }
 }
