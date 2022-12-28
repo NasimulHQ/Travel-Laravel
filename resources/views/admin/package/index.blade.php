@@ -34,10 +34,10 @@ Admin Dashboard
                         <td>{{ $view->package_title }}</td>
                         <td>{{ $view->package_heading }}</td>
                         <td>{{ $view->package_description}}</td>
-                        {{-- <td>
-                            <a href="{{ url('edit-hotel/'.$show->id)}}" class="btn btn-info">Edit</a>
-                            <a href="{{ url('delete-hotel/'.$show->id)}}" class="btn btn-danger">Delete</a>
-                        </td> --}}
+                        <td>
+                            <a href="{{ url('edit-package/'.$view->id)}}" class="btn btn-info">Edit</a>
+                            <a href="{{ url('delete-package/'.$view->id)}}" class="btn btn-danger">Delete</a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

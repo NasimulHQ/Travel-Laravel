@@ -52,12 +52,16 @@ Route::post('add-hotel', [HotelController::class, 'store']);
 Route::get('edit-hotel/{id}', [HotelController::class, 'edit']);
 Route::put('update-hotel/{id}', [HotelController::class, 'update']);
 Route::get('delete-hotel/{id}', [HotelController::class, 'destroy']);
+
 Route::get('search', [HotelController::class, 'search']);
 
 //Package
 Route::get('packages', [PackageController::class, 'index']);
 Route::get('add-package', [PackageController::class, 'create']);
 Route::post('add-package', [PackageController::class, 'store']);
+Route::get('edit-package/{id}', [PackageController::class, 'edit']);
+Route::put('update-package/{id}', [PackageController::class, 'update']);
+Route::get('delete-package/{id}', [PackageController::class, 'destroy']);
 
 
 
