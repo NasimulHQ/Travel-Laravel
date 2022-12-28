@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HotelController;
+use App\Http\Controllers\PackageController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
@@ -52,6 +53,13 @@ Route::get('edit-hotel/{id}', [HotelController::class, 'edit']);
 Route::put('update-hotel/{id}', [HotelController::class, 'update']);
 Route::get('delete-hotel/{id}', [HotelController::class, 'destroy']);
 Route::get('search', [HotelController::class, 'search']);
+
+//Package
+Route::get('packages', [PackageController::class, 'index']);
+Route::get('add-package', [PackageController::class, 'create']);
+Route::post('add-package', [PackageController::class, 'store']);
+
+
 
 //ajax...
 Route::get('extra', [HotelController::class, 'extra']);

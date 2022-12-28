@@ -195,7 +195,7 @@ Hotel Page
             <!-- end top nav -->
             <!-- main headline -->
             <div class="main-headline wow animate bounceIn" data-wow-duration="1.8s">
-                <h1>53 Hotels Found</h1>
+                <h1>Here Hotels Found</h1>
                 <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Dhaka, Bangladesh</p>
             </div><!-- end main headline -->
         </div>
@@ -258,7 +258,7 @@ Hotel Page
                                         </div>
                                     </li>
                                     <li>
-                                        <p>$0-$49</p>
+                                        <p>0-500</p>
                                     </li>
                                 </ul>
                             </div><br><br>
@@ -268,7 +268,7 @@ Hotel Page
                                         <div class="hotel-left-check"></div>
                                     </li>
                                     <li>
-                                        <p>$49-$99</p>
+                                        <p>501-1000</p>
                                     </li>
                                 </ul>
                             </div><br><br>
@@ -278,7 +278,7 @@ Hotel Page
                                         <div class="hotel-left-check"></div>
                                     </li>
                                     <li>
-                                        <p>$100-$129</p>
+                                        <p>1001-1500</p>
                                     </li>
                                 </ul>
                             </div><br><br>
@@ -288,7 +288,7 @@ Hotel Page
                                         <div class="hotel-left-check"></div>
                                     </li>
                                     <li>
-                                        <p>$130-$200</p>
+                                        <p>1501-2000</p>
                                     </li>
                                 </ul>
                             </div><br><br>
@@ -316,102 +316,7 @@ Hotel Page
                                 </span>
                             </div>
                         </div>
-
-                        <div class="hotel-left-price" style="border:none;">
-                            <h4>AMENITIES</h4>
-                            <div class="check-div">
-                                <ul>
-                                    <li>
-                                        <div class="hotel-left-check">
-
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <p>Air Conditioner</p>
-                                    </li>
-                                </ul>
-                            </div><br><br>
-                            <div class="check-div">
-                                <ul>
-                                    <li>
-                                        <div class="hotel-left-check"></div>
-                                    </li>
-                                    <li>
-                                        <p>Bar</p>
-                                    </li>
-                                </ul>
-                            </div><br><br>
-                            <div class="check-div">
-                                <ul>
-                                    <li>
-                                        <div class="hotel-left-check"></div>
-                                    </li>
-                                    <li>
-                                        <p>Swiming Pool</p>
-                                    </li>
-                                </ul>
-                            </div><br><br>
-                            <div class="check-div">
-                                <ul>
-                                    <li>
-                                        <div class="hotel-left-check"></div>
-                                    </li>
-                                    <li>
-                                        <p>Gym</p>
-                                    </li>
-                                </ul>
-                            </div><br><br>
-                            <div class="check-div">
-                                <ul>
-                                    <li>
-                                        <div class="hotel-left-check"></div>
-                                    </li>
-                                    <li>
-                                        <p>Restaurant</p>
-                                    </li>
-                                </ul>
-                            </div><br><br>
-                            <div class="check-div">
-                                <ul>
-                                    <li>
-                                        <div class="hotel-left-check"></div>
-                                    </li>
-                                    <li>
-                                        <p>Cafe</p>
-                                    </li>
-                                </ul>
-                            </div><br><br>
-                            <div class="check-div">
-                                <ul>
-                                    <li>
-                                        <div class="hotel-left-check"></div>
-                                    </li>
-                                    <li>
-                                        <p>Wifi</p>
-                                    </li>
-                                </ul>
-                            </div><br><br>
-                            <div class="check-div">
-                                <ul>
-                                    <li>
-                                        <div class="hotel-left-check"></div>
-                                    </li>
-                                    <li>
-                                        <p>Parking</p>
-                                    </li>
-                                </ul>
-                            </div><br><br>
-                            <div class="check-div">
-                                <ul>
-                                    <li>
-                                        <div class="hotel-left-check"></div>
-                                    </li>
-                                    <li>
-                                        <p>24HRS Check-in</p>
-                                    </li>
-                                </ul>
-                            </div><br><br>
-                        </div>
+                        
 
                     </div><!-- end left option -->
                 </div>
