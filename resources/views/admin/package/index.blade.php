@@ -15,42 +15,35 @@ Admin Dashboard
     </section>
 
     <!-- Main content -->
-    {{-- <section class="content">
+    <section class="content">
         <div class="box">
             <table class="table table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Hotel Image</th>
-                        <th>Hotel Title</th>
-                        <th>Hotel Location</th>
-                        <th>Hotel Price</th>
-                        <th>Hotel Rating</th>
+                        <th>Package Title</th>
+                        <th>Package Heading</th>
+                        <th>Package Description</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($hotel as $show)
+                    @foreach ($package as $view)
                     <tr>
                         <td>{{ $loop->iteration}}</td>
-                        <td>
-                            <img src="{{ asset('uploads/hotels/'.$show->hotel_image)}}" height="80px" width="80px"
-                                alt="image">
-                        </td>
-                        <td>{{ $show->hotel_title }}</td>
-                        <td>{{ $show->hotel_location }}</td>
-                        <td>{{ $show->hotel_price}}</td>
-                        <td>{{ $show->hotel_rating}}</td>
-                        <td>
+                        <td>{{ $view->package_title }}</td>
+                        <td>{{ $view->package_heading }}</td>
+                        <td>{{ $view->package_description}}</td>
+                        {{-- <td>
                             <a href="{{ url('edit-hotel/'.$show->id)}}" class="btn btn-info">Edit</a>
                             <a href="{{ url('delete-hotel/'.$show->id)}}" class="btn btn-danger">Delete</a>
-                        </td>
+                        </td> --}}
                     </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
-    </section> --}}
+    </section>
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
