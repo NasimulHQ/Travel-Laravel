@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FeaturePostController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\PackageController;
@@ -67,7 +68,9 @@ Route::get('edit-package/{id}', [PackageController::class, 'edit']);
 Route::put('update-package/{id}', [PackageController::class, 'update']);
 Route::get('delete-package/{id}', [PackageController::class, 'destroy']);
 
-
+//Feature Post
+Route::get('featureposts', [FeaturePostController::class, 'index']);
+Route::get('add-featurepost', [FeaturePostController::class, 'create']);
 
 //ajax...
 Route::get('extra', [HotelController::class, 'extra']);
