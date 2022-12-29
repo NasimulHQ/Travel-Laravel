@@ -41,10 +41,10 @@ Admin Dashboard
                         <td>{{ $fpost->featpost_heading }}</td>
                         <td>{{ $fpost->featpost_description}}</td>
                         <td>{{ $fpost->featpost_date}}</td>
-                        {{-- <td>
-                            <a href="{{ url('edit-hotel/'.$show->id)}}" class="btn btn-info">Edit</a>
-                            <a href="{{ url('delete-hotel/'.$show->id)}}" class="btn btn-danger">Delete</a>
-                        </td> --}}
+                        <td>
+                            <a href="{{ url('edit-featurepost/'.$fpost->id)}}" class="btn btn-info">Edit</a>
+                            {{-- <a href="{{ url('delete-featurepost/'.$fpost->id)}}" class="btn btn-danger">Delete</a> --}}
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

@@ -72,6 +72,9 @@ Route::get('delete-package/{id}', [PackageController::class, 'destroy']);
 Route::get('featureposts', [FeaturePostController::class, 'index']);
 Route::get('add-featurepost', [FeaturePostController::class, 'create']);
 Route::post('add-featurepost', [FeaturePostController::class, 'store']);
+Route::get('edit-featurepost/{id}', [FeaturePostController::class, 'edit']);
+Route::put('update-featurepost/{id}', [FeaturePostController::class, 'update']);
+Route::get('delete-featurepost/{id}', [FeaturePostController::class, 'destroy']);
 
 //ajax...
 Route::get('extra', [HotelController::class, 'extra']);

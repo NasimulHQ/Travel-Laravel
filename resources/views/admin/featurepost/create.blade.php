@@ -49,8 +49,9 @@ Admin Dashboard
                     </div>
                     <div class="form-group">
                         <label for="">Feature Post Description:</label>
-                        <textarea name="featpost_description" rows="4" cols="50">
-                        </textarea>
+                        <input type="text" class="form-control" name="featpost_description" placeholder="Enter the Feature Post Description">
+                        {{-- <textarea name="featpost_description" rows="4" cols="50">
+                        </textarea> --}}
                         @error('featpost_description')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
