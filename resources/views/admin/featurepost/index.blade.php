@@ -15,42 +15,42 @@ Admin Dashboard
     </section>
 
     <!-- Main content -->
-    {{-- <section class="content">
+    <section class="content">
         <div class="box">
             <table class="table table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Hotel Image</th>
-                        <th>Hotel Title</th>
-                        <th>Hotel Location</th>
-                        <th>Hotel Price</th>
-                        <th>Hotel Rating</th>
+                        <th>FeatPost Image</th>
+                        <th>FeatPost Title</th>
+                        <th>FeatPost Heading</th>
+                        <th>FeatPost Description</th>
+                        <th>FeatPost Date</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($hotel as $show)
+                    @foreach ($featurepost as $fpost)
                     <tr>
                         <td>{{ $loop->iteration}}</td>
                         <td>
-                            <img src="{{ asset('uploads/hotels/'.$show->hotel_image)}}" height="80px" width="80px"
+                            <img src="{{ asset('uploads/featposts/'.$fpost->featpost_image)}}" height="80px" width="80px"
                                 alt="image">
                         </td>
-                        <td>{{ $show->hotel_title }}</td>
-                        <td>{{ $show->hotel_location }}</td>
-                        <td>{{ $show->hotel_price}}</td>
-                        <td>{{ $show->hotel_rating}}</td>
-                        <td>
+                        <td>{{ $fpost->featpost_title }}</td>
+                        <td>{{ $fpost->featpost_heading }}</td>
+                        <td>{{ $fpost->featpost_description}}</td>
+                        <td>{{ $fpost->featpost_date}}</td>
+                        {{-- <td>
                             <a href="{{ url('edit-hotel/'.$show->id)}}" class="btn btn-info">Edit</a>
                             <a href="{{ url('delete-hotel/'.$show->id)}}" class="btn btn-danger">Delete</a>
-                        </td>
+                        </td> --}}
                     </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
-    </section> --}}
+    </section>
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->

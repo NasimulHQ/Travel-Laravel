@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FeaturePost;
 use Illuminate\Http\Request;
 
 class FeaturePostController extends Controller
@@ -13,7 +14,8 @@ class FeaturePostController extends Controller
      */
     public function index()
     {
-        return view('admin.featurepost.index');
+        $featurepost = FeaturePost::all();
+        return view('admin.featurepost.index', compact('featurepost'));
     }
 
     /**
@@ -34,7 +36,32 @@ class FeaturePostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(
+            $request,
+            [
+                'featpost_image' => 'required|image|mimes:jpeg,jpg,gif,png,svg|max:2048',
+                'featpost_title' => 'required|min:3|max:199|string',
+                'featpost_heading' => 'required|min:3|max:199|string',
+                'featpost_description' => 'required|min:3|max:2000|string',
+                
+                // 'featpost_date' => 'required|min:3|max:199|string'
+
+            ]
+        );
+        $featurepost = new FeaturePost();
+        if ($request->hasFile('featpost_image')) {
+            $file = $request->file('featpost_image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('uploads/featposts/', $filename);
+            $featurepost->featpost_image = $filename;
+        }
+        $featurepost->featpost_title = $request->input('featpost_title');
+        $featurepost->featpost_heading = $request->input('featpost_heading');
+        $featurepost->featpost_description = $request->input('featpost_description');
+        $featurepost->featpost_date = $request->input('featpost_date');
+        $featurepost->save();
+        return redirect()->back()->with('status', 'Feature Post Upload successfully done');
     }
 
     /**
