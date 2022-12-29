@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FeaturePost;
 use App\Models\Gallery;
 use App\Models\Hotel;
 use App\Models\Package;
@@ -43,6 +44,9 @@ class PageController extends Controller
         $package = Package::select('package_title', 'package_heading', 'package_description')
         ->orderBy('id', 'asc')
         ->get();
-        return view('front-end.blog', compact('package'));
+        $featurepost = FeaturePost::select('featpost_image', 'featpost_title', 'featpost_heading', 'featpost_description', 'featpost_date')
+        ->orderBy('id', 'asc')
+        ->get();
+        return view('front-end.blog', compact('package', 'featurepost'));
     }
 }

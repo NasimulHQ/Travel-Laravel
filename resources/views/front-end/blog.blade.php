@@ -101,37 +101,32 @@ Blog Page
     <section class="blog-post">
         <div class="container">
             <h2>Featured Post</h2>
-            <div class="row">
-                <div class="col-md-6 col-sm-6">
-                    <div class="blog-post-img wow animate slideInLeft" data-wow-duration="1.5s">
-                        <img src="{{ asset('front') }}/image/62.jpg">
+            @foreach ($featurepost as $fpost)
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="blog-post-img wow animate slideInLeft" data-wow-duration="1.5s">
+                            <img src="{{ asset('uploads/featposts/'.$fpost->featpost_image)}}" alt="image">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="blog-post-title wow animate slideInRight" data-wow-duration="1.5s">
+                            <h4>{{ $fpost->featpost_title }}</h4>
+                            <h3><a href="#">{{ $fpost->featpost_heading }}</a></h3>
+                            <ul>
+                                <li><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp; {{ $fpost->featpost_date }} &nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                                <li><a href="#"><i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;tips &
+                                        news</a>&nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                                <li><a href="#"><i class="fa fa-comments" aria-hidden="true"></i>&nbsp;19
+                                        comments</a>&nbsp;&nbsp;&nbsp;&nbsp;/</li>
+                                <li><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
+                            </ul>
+                            <P>{{ $fpost->featpost_description }}</P>
+                            <h5><a href="#">Read More&nbsp;<i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                            </h5>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-6">
-                    <div class="blog-post-title wow animate slideInRight" data-wow-duration="1.5s">
-                        <h4>Travel Tips</h4>
-                        <h3><a href="#">10 things to do before you travel</a></h3>
-                        <ul>
-                            <li><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;16th
-                                june&nbsp;&nbsp;&nbsp;&nbsp;/</li>
-                            <li><a href="#"><i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;tips &
-                                    news</a>&nbsp;&nbsp;&nbsp;&nbsp;/</li>
-                            <li><a href="#"><i class="fa fa-comments" aria-hidden="true"></i>&nbsp;19
-                                    comments</a>&nbsp;&nbsp;&nbsp;&nbsp;/</li>
-                            <li><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
-                        </ul>
-                        <P>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi nemo animi nostrum
-                            accusantium, perferendis culpa iste est hic minima magnam, vel libero id! Quibusdam facilis
-                            debitis sequi eligendi voluptates magni ipsa, aliquid voluptatum iste vel! Facilis amet
-                            aliquam quidem explicabo et dolore distinctio enim accusamus atque, sapiente beatae odit
-                            impedit optio commodi libero est natus ducimus recusandae vero, soluta voluptas?
-                        </P>
-                        <h5><a href="#">Read More&nbsp;<i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                        </h5>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </section>
 
