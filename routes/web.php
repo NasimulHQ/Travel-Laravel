@@ -55,6 +55,10 @@ Route::get('delete-hotel/{id}', [HotelController::class, 'destroy']);
 
 Route::get('search', [HotelController::class, 'search']);
 
+//Hotel details
+Route::get('book-now/{id}', [HotelController::class, 'bookNow'])->name('book-now');
+
+
 //Package
 Route::get('packages', [PackageController::class, 'index']);
 Route::get('add-package', [PackageController::class, 'create']);
@@ -68,5 +72,4 @@ Route::get('delete-package/{id}', [PackageController::class, 'destroy']);
 //ajax...
 Route::get('extra', [HotelController::class, 'extra']);
 
-//Hotel details
-Route::get('book-now/{id}', [HotelController::class, 'bookNow'])->name('book-now');
+

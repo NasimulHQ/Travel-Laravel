@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use App\Models\Hotel;
+use App\Models\Package;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -13,7 +14,10 @@ class PageController extends Controller
         $gallery = Gallery::select('galler_title', 'galler_heading', 'galler_image', 'galler_image_title')
             ->orderBy('id', 'asc')
             ->get();
-        return view('front-end.home', compact('gallery'));
+        $package = Package::select('package_title', 'package_heading', 'package_description')
+            ->orderBy('id', 'asc')
+            ->get();
+            return view('front-end.home', compact('gallery', 'package'));
     }
     public function flights()
     {
@@ -36,6 +40,9 @@ class PageController extends Controller
     }
     public function blogs()
     {
-        return view('front-end.blog');
+        $package = Package::select('package_title', 'package_heading', 'package_description')
+        ->orderBy('id', 'asc')
+        ->get();
+        return view('front-end.blog', compact('package'));
     }
 }

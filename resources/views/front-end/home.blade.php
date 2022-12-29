@@ -373,24 +373,7 @@ Home Page
     </div>
 </section><!-- end blog section -->
 
-<!-- start travel plans section -->
-<section class="travel-plans wow animate bounceIn" data-wow-duration="2s">
-    <div class="container">
-        <div class="travel-text">
-            <h5>Create a Custom Plan based on your Taste</h5>
-            <h1>Start making your Travel Plans</h1>
-            <p>
-                Educate, aid, criteria catalyst John Lennon. Life-saving diversity necessities elevate worldwide
-                carbon rights empowerment. Pursue these aspirations leverage, accessibility UNICEF, reduce child
-                mortality collaborative cities safeguards. Informal economies non-partisan; evolution transformative
-                climate change local benefit.
-            </p>
-            <div class="travel-btn wow animate slideInLeft" data-wow-duration="2s">
-                <a href="{{ asset('front')}}/#">create a package</a>
-            </div>
-        </div>
-    </div>
-</section><!-- end travel plans -->
+@include('front-end.layout.package')
 
 
 @endsection
