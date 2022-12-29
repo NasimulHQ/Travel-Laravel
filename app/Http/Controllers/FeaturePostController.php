@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\FeaturePost;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class FeaturePostController extends Controller
 {
@@ -132,6 +133,12 @@ class FeaturePostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $featurepost = FeaturePost::find($id);
+        $destination = 'uploads/featposts/' . $featurepost->featpost_image;
+        if (File::Exists($destination)) {
+            File::delete($destination);
+        }
+        $featurepost->delete();
+        return redirect()->back()->with('status', 'Faeture Post delete successfully done');
     }
 }

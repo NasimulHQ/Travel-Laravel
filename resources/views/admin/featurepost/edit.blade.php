@@ -36,7 +36,7 @@ Hotel Dashboard
                     <div class="form-group">
                         <label for="">Feat Post Title:</label>
                         <input type="text" class="form-control" name="featpost_title" value="{{ $featurepost->featpost_title}}"
-                            placeholder="Enter the hotel title">
+                            placeholder="Enter the Feature Post title">
                         @error('featpost_title')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
@@ -44,7 +44,7 @@ Hotel Dashboard
                     <div class="form-group">
                         <label for="">Feature Post Heading:</label>
                         <input type="text" class="form-control" name="featpost_heading"
-                            value="{{ $featurepost->featpost_heading }}" placeholder="Enter the hotel location">
+                            value="{{ $featurepost->featpost_heading }}" placeholder="Enter the Faeture Post Heading">
                         @error('featpost_heading')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
@@ -59,7 +59,7 @@ Hotel Dashboard
                     <div class="form-group">
                         <label for="">Feature Post Date:</label>
                         <input type="date" class="form-control" name="featpost_date" value="{{ $featurepost->featpost_date}}"
-                            placeholder="Enter the hotel rating">
+                            placeholder="Enter the Faeture Post Date">
                         @error('featpost_date')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror

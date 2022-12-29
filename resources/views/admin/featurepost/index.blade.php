@@ -43,7 +43,7 @@ Admin Dashboard
                         <td>{{ $fpost->featpost_date}}</td>
                         <td>
                             <a href="{{ url('edit-featurepost/'.$fpost->id)}}" class="btn btn-info">Edit</a>
-                            {{-- <a href="{{ url('delete-featurepost/'.$fpost->id)}}" class="btn btn-danger">Delete</a> --}}
+                            <a href="{{ url('delete-featurepost/'.$fpost->id)}}" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
                     @endforeach
