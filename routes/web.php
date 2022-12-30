@@ -81,9 +81,9 @@ Route::get('delete-featurepost/{id}', [FeaturePostController::class, 'destroy'])
 Route::get('latestblogs', [LatestBlogController::class, 'index']);
 Route::get('add-latestblog', [LatestBlogController::class, 'create']);
 Route::post('add-latestblog', [LatestBlogController::class, 'store']);
-Route::get('edit-latestblog/{id}', [FeaturePostController::class, 'edit']);
-Route::put('update-latestblog/{id}', [FeaturePostController::class, 'update']);
-Route::get('delete-latestblog/{id}', [FeaturePostController::class, 'destroy']);
+Route::get('edit-latestblog/{id}', [LatestBlogController::class, 'edit']);
+Route::put('update-latestblog/{id}', [LatestBlogController::class, 'update']);
+Route::get('delete-latestblog/{id}', [LatestBlogController::class, 'destroy']);
 
 //ajax...
 Route::get('extra', [HotelController::class, 'extra']);

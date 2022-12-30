@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\LatestBlog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class LatestBlogController extends Controller
 {
@@ -81,7 +82,8 @@ class LatestBlogController extends Controller
      */
     public function edit($id)
     {
-        //
+        $latestblog = LatestBlog::find($id);
+        return view('admin.latestblog.edit', compact('latestblog'));
     }
 
     /**
@@ -93,7 +95,30 @@ class LatestBlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate(
+            $request,
+            [
+                'latestblog_image' => 'required|image|mimes:jpeg,jpg,gif,png,svg|max:2048',
+                'latestblog_title' => 'required|min:3|max:199|string',
+                'latestblog_heading' => 'required|min:3|max:199|string',
+
+                // 'latestblog_date' => 'required|min:3|max:199|string',
+
+            ]
+        );
+        $latestblog = LatestBlog::find($id);
+        if ($request->hasFile('latestblog_image')) {
+            $file = $request->file('latestblog_image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('uploads/latestblogs/', $filename);
+            $latestblog->latestblog_image = $filename;
+        }
+        $latestblog->latestblog_title = $request->input('latestblog_title');
+        $latestblog->latestblog_heading = $request->input('latestblog_heading');
+        $latestblog->latestblog_date = $request->input('latestblog_date');
+        $latestblog->update();
+        return redirect()->back()->with('status', 'Latest Blog Update successfully done');
     }
 
     /**
@@ -104,6 +129,12 @@ class LatestBlogController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $latestblog = LatestBlog::find($id);
+        $destination = 'uploads/featposts/' . $latestblog->latestblog_image;
+        if (File::Exists($destination)) {
+            File::delete($destination);
+        }
+        $latestblog->delete();
+        return redirect()->back()->with('status', 'Latest Blog delete successfully done');
     }
 }

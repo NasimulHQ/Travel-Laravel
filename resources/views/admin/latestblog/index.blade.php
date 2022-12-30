@@ -39,10 +39,10 @@ Admin Dashboard
                         <td>{{ $lblog->latestblog_title }}</td>
                         <td>{{ $lblog->latestblog_heading }}</td>
                         <td>{{ $lblog->latestblog_date}}</td>
-                        {{-- <td>
+                        <td>
                             <a href="{{ url('edit-latestblog/'.$lblog->id)}}" class="btn btn-info">Edit</a>
                             <a href="{{ url('delete-latestblog/'.$lblog->id)}}" class="btn btn-danger">Delete</a>
-                        </td> --}}
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
