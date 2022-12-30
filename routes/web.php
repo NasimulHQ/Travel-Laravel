@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FeaturePostController;
+use App\Http\Controllers\FlightController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\LatestBlogController;
@@ -60,6 +61,12 @@ Route::get('search', [HotelController::class, 'search']);
 
 //Hotel details
 Route::get('book-now/{id}', [HotelController::class, 'bookNow'])->name('book-now');
+
+//Flight Route
+Route::get('flights', [FlightController::class, 'index']);
+Route::get('add-flight', [FlightController::class, 'create']);
+Route::post('add-flight', [FlightController::class, 'store']);
+
 
 
 //Package
