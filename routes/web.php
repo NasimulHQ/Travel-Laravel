@@ -3,6 +3,7 @@
 use App\Http\Controllers\FeaturePostController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HotelController;
+use App\Http\Controllers\LatestBlogController;
 use App\Http\Controllers\PackageController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -75,6 +76,14 @@ Route::post('add-featurepost', [FeaturePostController::class, 'store']);
 Route::get('edit-featurepost/{id}', [FeaturePostController::class, 'edit']);
 Route::put('update-featurepost/{id}', [FeaturePostController::class, 'update']);
 Route::get('delete-featurepost/{id}', [FeaturePostController::class, 'destroy']);
+
+// Latest Post
+Route::get('latestblogs', [LatestBlogController::class, 'index']);
+Route::get('add-latestblog', [LatestBlogController::class, 'create']);
+Route::post('add-latestblog', [LatestBlogController::class, 'store']);
+Route::get('edit-latestblog/{id}', [FeaturePostController::class, 'edit']);
+Route::put('update-latestblog/{id}', [FeaturePostController::class, 'update']);
+Route::get('delete-latestblog/{id}', [FeaturePostController::class, 'destroy']);
 
 //ajax...
 Route::get('extra', [HotelController::class, 'extra']);
