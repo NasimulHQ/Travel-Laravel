@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Flight;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class FlightController extends Controller
 {
@@ -162,6 +163,12 @@ class FlightController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $flight = Flight::find($id);
+        $destination = 'uploads/flights/' . $flight->airline_image;
+        if (File::Exists($destination)) {
+            File::delete($destination);
+        }
+        $flight->delete();
+        return redirect()->back()->with('status', 'Flight delete successfully done');
     }
 }
