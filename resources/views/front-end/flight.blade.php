@@ -294,13 +294,29 @@ Flight Page
                                             <li><i class="fa fa-bell" aria-hidden="true" title="Room Service"></i></li>
                                             <li><i class="fa fa-coffee" aria-hidden="true" title="Cafe"></i></li>
                                         </ul> --}}
-                                        <p class="hotel-title">
-                                            {{ $fshow->airline_form }}
-                                        </p>
-                                        <br>
-                                        <p class="hotel-title">
-                                            {{ $fshow->airline_destination }}
-                                        </p>
+                                     <div class="col-md-12" style="margin-top: -40px">
+                                        <div class="col-md-3">
+                                                <h3 class="hotel-title">
+                                                    <span>
+                                                    {{$fshow->airline_departure_time }} ----
+                                                    {{ $fshow->airline_form }} 
+                                                    </span>
+                                                    </h3>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <h3 class="hotel-title">
+                                                <span>
+                                                    {{$fshow->airline_arrival_time }}
+                                                   
+                                                    {{ $fshow->airline_destination }}
+                                                </span>
+                                            </h3>
+                                        </div>
+                                        <div class="col-md-4" style="margin-top: 85px">
+                                            <p>{{ $fshow->airline_duration }}</p>
+                                        </div>
+                                     </div>
+                
                                     </div>
                                     <div class="col-md-2 col-sm-2">
                                         <h1>{{ $fshow->airline_economy_price }} tk</h1>
