@@ -144,7 +144,7 @@ class HotelController extends Controller
         // dd($request->get('query'));
         $search_text = $request->get('query');
         $hotel = Hotel::where('hotel_location', 'LIKE', '%' . $search_text . '%')->get();
-
+        
         return view('front-end.hotel', compact('hotel'));
     }
     public function extra()

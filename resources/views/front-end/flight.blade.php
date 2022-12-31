@@ -220,6 +220,8 @@ Flight Page
             <!-- end Main-Nav -->
 
         </div>
+
+        {{-- search flight start --}}
         <div class="holidays-header-title">
             <h2>Choose Your Flights Destination</h2>
             <div class="holidays-header-form wow animate fadeInRightBig" data-wow-duration="1.5s">
@@ -239,16 +241,82 @@ Flight Page
                 </form>
             </div>
         </div>
+        {{-- search flight end --}}
+
     </header><!-- end header section -->
 
     <!-- start holidays heading -->
 
     <section class="flights-heading">
         <div class="container">
-            <p>Most Popular Flights Packages for You</p>
-            <h2>Sign Up for Travel Deals:</h2>
+            <h2>Most Popular Flights for You</h2>
+            {{-- <h2>Sign Up for Travel Deals:</h2> --}}
             <div class="container">
-                <form>
+                <div class="row">
+                    <div class="col-md-9 col-sm-9" style="width: 100%">
+                        <div class="hotel-list-right">
+                    
+                            @foreach ($flight as $fshow)
+                            <div class="first-hotel wow animate bounceIn" data-wow-duration="2s" style="animation-delay:1s">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img src="{{ asset('uploads/flights/'.$fshow->airline_image)}}" alt="image">
+                                    </div>
+                                    <div class="col-md-6 col-sm-6" style="text-align: left">
+                                        <h2>{{ $fshow->airline_title }}</h2>
+                                        {{-- <table>
+                                            <tr>
+                                                <td>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star "></span>
+                                                    <span class="fa fa-star"></span>
+                                                    &nbsp;&nbsp;/
+                                                </td>
+                                                <td>
+                                                    <p class="map-p"><i class="fa fa-map-o" aria-hidden="true"></i>&nbsp;
+                                                        View Map &nbsp; / </p>
+                                                </td>
+                                                <td>
+                                                    <p>&nbsp;<i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;24
+                                                        Reviews</p>
+                                                </td>
+                                            </tr>
+                                        </table> --}}
+                                        {{-- <ul>
+                                            <li><i class="fa fa-wifi" aria-hidden="true" title="wifi"></i></li>
+                                            <li><i class="fa fa-glass" aria-hidden="true" title="Bar"></i></li>
+                                            <li><i class="fa fa-random" aria-hidden="true" title="A/C"></i></li>
+                                            <li><i class="fa fa-cutlery" aria-hidden="true" title="Resturant"></i></li>
+                                            <li style="background:#d1d1d1;"><i class="fa fa-arrows-h" aria-hidden="true"
+                                                    title="GYM not Avilable"></i></li>
+                                            <li><i class="fa fa-bell" aria-hidden="true" title="Room Service"></i></li>
+                                            <li><i class="fa fa-coffee" aria-hidden="true" title="Cafe"></i></li>
+                                        </ul> --}}
+                                        <p class="hotel-title">
+                                            {{ $fshow->airline_form }}
+                                        </p>
+                                        <br>
+                                        <p class="hotel-title">
+                                            {{ $fshow->airline_destination }}
+                                        </p>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2">
+                                        <h1>{{ $fshow->airline_economy_price }} tk</h1>
+                                        <h5>Price Start</h5><br>
+                                        <a href="#" class="hotel-right-btn">Book now</a>
+                                        {{-- <button class="hotel-right-btn">book now
+                                        </button> --}}
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                    
+                        </div>
+                    </div>
+                </div>
+                {{-- <form>
                     <div class="row">
                         <div class="col-md-4 col-sm-4">
                             <input type="text" placeholder="From*" class="flights-heading-src"
@@ -284,7 +352,7 @@ Flight Page
                     <div class="travel-btn">
                         <a href="{{ asset('front') }}/#">subscribe</a>
                     </div>
-                </form>
+                </form> --}}
             </div>
         </div>
     </section><!-- end holidays heading -->

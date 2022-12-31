@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FeaturePost;
+use App\Models\Flight;
 use App\Models\Gallery;
 use App\Models\Hotel;
 use App\Models\LatestBlog;
@@ -26,7 +27,10 @@ class PageController extends Controller
     }
     public function flights()
     {
-        return view('front-end.flight');
+        $flight = Flight::select('airline_image', 'airline_title', 'airline_form', 'airline_destination', 'airline_date', 'airline_departure_time', 'airline_arrival_time', 'airline_duration', 'airline_economy_seat', 'airline_business_seat', 'airline_economy_price', 'airline_business_price', 'airline_payment')
+        ->orderBy('id', 'asc')
+        ->get();
+        return view('front-end.flight', compact('flight'));
     }
     public function hotel()
     {
