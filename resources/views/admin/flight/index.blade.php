@@ -33,7 +33,7 @@ Admin Dashboard
                         <th>Airline business seat</th>
                         <th>Airline economy price</th>
                         <th>Airline business price</th>
-                        <th>Airline airline payment</th>
+                        <th>Airline payment</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -57,10 +57,10 @@ Admin Dashboard
                         <td>{{ $fshow->airline_economy_price}}</td>
                         <td>{{ $fshow->airline_business_price}}</td>
                         <td>{{ $fshow->airline_payment}}</td>
-                        {{-- <td>
-                            <a href="{{ url('edit-hotel/'.$show->id)}}" class="btn btn-info">Edit</a>
-                            <a href="{{ url('delete-hotel/'.$show->id)}}" class="btn btn-danger">Delete</a>
-                        </td> --}}
+                        <td>
+                            <a href="{{ url('edit-flight/'.$fshow->id)}}" class="btn btn-info">Edit</a>
+                            <a href="{{ url('delete-flight/'.$fshow->id)}}" class="btn btn-danger">Delete</a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

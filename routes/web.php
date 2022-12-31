@@ -66,6 +66,8 @@ Route::get('book-now/{id}', [HotelController::class, 'bookNow'])->name('book-now
 Route::get('flights', [FlightController::class, 'index']);
 Route::get('add-flight', [FlightController::class, 'create']);
 Route::post('add-flight', [FlightController::class, 'store']);
+Route::get('edit-flight/{id}', [FlightController::class, 'edit']);
+Route::put('update-flight/{id}', [FlightController::class, 'update']);
 
 
 
