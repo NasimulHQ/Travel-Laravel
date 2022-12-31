@@ -15,42 +15,58 @@ Admin Dashboard
     </section>
 
     <!-- Main content -->
-    {{-- <section class="content">
+    <section class="content">
         <div class="box">
             <table class="table table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Hotel Image</th>
-                        <th>Hotel Title</th>
-                        <th>Hotel Location</th>
-                        <th>Hotel Price</th>
-                        <th>Hotel Rating</th>
+                        <th>Airline Image</th>
+                        <th>Airline Title</th>
+                        <th>Airline form</th>
+                        <th>Airline destination</th>
+                        <th>Airline date</th>
+                        <th>Airline departure time</th>
+                        <th>Airline arrival time</th>
+                        <th>Airline duration</th>
+                        <th>Airline economy seat</th>
+                        <th>Airline business seat</th>
+                        <th>Airline economy price</th>
+                        <th>Airline business price</th>
+                        <th>Airline airline payment</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($hotel as $show)
+                    @foreach ($flight as $fshow)
                     <tr>
                         <td>{{ $loop->iteration}}</td>
                         <td>
-                            <img src="{{ asset('uploads/hotels/'.$show->hotel_image)}}" height="80px" width="80px"
+                            <img src="{{ asset('uploads/flights/'.$fshow->airline_image)}}" height="60px" width="60px"
                                 alt="image">
                         </td>
-                        <td>{{ $show->hotel_title }}</td>
-                        <td>{{ $show->hotel_location }}</td>
-                        <td>{{ $show->hotel_price}}</td>
-                        <td>{{ $show->hotel_rating}}</td>
-                        <td>
+                        <td>{{ $fshow->airline_title }}</td>
+                        <td>{{ $fshow->airline_form }}</td>
+                        <td>{{ $fshow->airline_destination}}</td>
+                        <td>{{ $fshow->airline_date}}</td>
+                        <td>{{ $fshow->airline_departure_time}}</td>
+                        <td>{{ $fshow->airline_arrival_time}}</td>
+                        <td>{{ $fshow->airline_duration}}</td>
+                        <td>{{ $fshow->airline_economy_seat}}</td>
+                        <td>{{ $fshow->airline_business_seat}}</td>
+                        <td>{{ $fshow->airline_economy_price}}</td>
+                        <td>{{ $fshow->airline_business_price}}</td>
+                        <td>{{ $fshow->airline_payment}}</td>
+                        {{-- <td>
                             <a href="{{ url('edit-hotel/'.$show->id)}}" class="btn btn-info">Edit</a>
                             <a href="{{ url('delete-hotel/'.$show->id)}}" class="btn btn-danger">Delete</a>
-                        </td>
+                        </td> --}}
                     </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
-    </section> --}}
+    </section>
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->

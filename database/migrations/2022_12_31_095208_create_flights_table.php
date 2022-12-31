@@ -22,6 +22,7 @@ class CreateFlightsTable extends Migration
             $table->string('airline_date');
             $table->string('airline_departure_time');
             $table->string('airline_arrival_time');
+            $table->string('airline_duration');
             $table->string('airline_economy_seat');
             $table->string('airline_business_seat');
             $table->string('airline_economy_price');

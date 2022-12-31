@@ -14,7 +14,8 @@ class FlightController extends Controller
      */
     public function index()
     {
-        return view('admin.flight.index');
+        $flight = Flight::all();
+        return view('admin.flight.index', compact('flight'));
     }
 
     /**
@@ -45,8 +46,9 @@ class FlightController extends Controller
                 // 'airline_date' => 'required|min:3|max:199|string',
                 'airline_departure_time' => 'required|min:3|max:199|string',
                 'airline_arrival_time' => 'required|min:3|max:199|string',
-                'airline_economy_seat' => 'required|min:3|max:199|string',
-                'airline_business_seat' => 'required|min:3|max:199|string',
+                // 'airline_duration' => 'required|min:3|max:199|string',
+                // 'airline_economy_seat' => 'required|min:3|max:199|string',
+                // 'airline_business_seat' => 'required|min:3|max:199|string',
                 'airline_economy_price' => 'required|min:3|max:199|string',
                 'airline_business_price' => 'required|min:3|max:199|string',
                 'airline_payment' => 'required|min:3|max:199|string',
@@ -67,6 +69,7 @@ class FlightController extends Controller
         $flight->airline_date = $request->input('airline_date');
         $flight->airline_departure_time = $request->input('airline_departure_time');
         $flight->airline_arrival_time = $request->input('airline_arrival_time');
+        $flight->airline_duration = $request->input('airline_duration');
         $flight->airline_economy_seat = $request->input('airline_economy_seat');
         $flight->airline_business_seat = $request->input('airline_business_seat');
         $flight->airline_economy_price = $request->input('airline_economy_price');

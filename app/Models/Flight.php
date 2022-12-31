@@ -18,6 +18,7 @@ class Flight extends Model
         'airline_date',
         'airline_departure_time',
         'airline_arrival_time',
+        'airline_duration',
         'airline_economy_seat',
         'airline_business_seat',
         'airline_economy_price',

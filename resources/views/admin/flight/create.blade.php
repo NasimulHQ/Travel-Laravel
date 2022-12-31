@@ -23,7 +23,7 @@ Admin Dashboard
         @endif
         <div class="box">
             <div class="box-body">
-                <form action="{{ url('add-hotel')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{ url('add-flight')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="">Airline Image:</label>
@@ -72,6 +72,13 @@ Admin Dashboard
                         <label for="">Airline Arrival Time:</label>
                         <input type="text" class="form-control" name="airline_arrival_time" placeholder="Enter the arrival time">
                         @error('airline_arrival_time')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="">Airline Duration Time:</label>
+                        <input type="text" class="form-control" name="airline_duration" placeholder="Enter the duration time">
+                        @error('airline_duration')
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
