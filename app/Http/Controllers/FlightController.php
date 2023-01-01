@@ -171,4 +171,18 @@ class FlightController extends Controller
         $flight->delete();
         return redirect()->back()->with('status', 'Flight delete successfully done');
     }
+
+    //Flight search
+    public function check(Request $request)
+    {
+        // dd($request->get('departure'));
+        $check_text = $request->get('departure');
+        $flight = Flight::where('airline_form', 'LIKE', '%' . $check_text . '%')->get();
+
+        return view('front-end.flight', compact('flight'));
+    }
+
+
+
+
 }

@@ -70,6 +70,9 @@ Route::get('edit-flight/{id}', [FlightController::class, 'edit']);
 Route::put('update-flight/{id}', [FlightController::class, 'update']);
 Route::get('delete-flight/{id}', [FlightController::class, 'destroy']);
 
+//Flight Search
+Route::get('check', [FlightController::class, 'check']);
+
 
 
 //Package

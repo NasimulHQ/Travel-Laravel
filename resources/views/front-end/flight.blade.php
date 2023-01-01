@@ -225,10 +225,10 @@ Flight Page
         <div class="holidays-header-title">
             <h2>Choose Your Flights Destination</h2>
             <div class="holidays-header-form wow animate fadeInRightBig" data-wow-duration="1.5s">
-                <form>
+                <form action="{{ url('check')}}" method="GET">
                     <div class="row">
                         <div class="col-md-4 col-sm-4">
-                            <input type="text" placeholder="Form" class="holidays-header-src">
+                            <input type="text" name="departure" placeholder="Form" class="holidays-header-src">
                         </div>
                         <div class="col-md-4 col-sm-4">
                             <input type="text" placeholder="Destination" class="holidays-header-src">
@@ -298,7 +298,7 @@ Flight Page
                                         <div class="col-md-3">
                                                 <h3 class="hotel-title">
                                                     <span>
-                                                    {{$fshow->airline_departure_time }} ----
+                                                    {{$fshow->airline_departure_time }}   ----
                                                     {{ $fshow->airline_form }} 
                                                     </span>
                                                     </h3>
