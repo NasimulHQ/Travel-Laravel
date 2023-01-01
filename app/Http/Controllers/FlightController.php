@@ -175,9 +175,22 @@ class FlightController extends Controller
     //Flight search
     public function check(Request $request)
     {
-        // dd($request->get('departure'));
-        $check_text = $request->get('departure');
-        $flight = Flight::where('airline_form', 'LIKE', '%' . $check_text . '%')->get();
+        // dd($request->get('departure');
+        if($request->departure && $request->arrive)
+        {
+        $flight = Flight::where('airline_form', 'LIKE', '%' . $request->departure . '%')
+            ->where('airline_destination', 'LIKE', '%' . $request->arrive . '%')
+            ->get(); 
+        }
+        // else
+        // {
+        //     return redirect()->with('There are no Flight Today');
+        // }
+
+        // $check_text = $request->get('departure' && 'arrive');
+        // $flight = Flight::where('airline_form', 'LIKE', '%' . $check_text . '%')
+        // ->where( 'airline_destination', 'LIKE', '%' . $check_text . '%')
+        // ->get();
 
         return view('front-end.flight', compact('flight'));
     }

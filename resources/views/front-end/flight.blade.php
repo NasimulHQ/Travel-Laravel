@@ -231,10 +231,10 @@ Flight Page
                             <input type="text" name="departure" placeholder="Form" class="holidays-header-src">
                         </div>
                         <div class="col-md-4 col-sm-4">
-                            <input type="text" placeholder="Destination" class="holidays-header-src">
+                            <input type="text" name="arrive" placeholder="Destination" class="holidays-header-src">
                         </div>
                         <div class="col-md-4 col-sm-4">
-                            <input type="text" placeholder="mm/dd/yy" class="holidays-header-src" id="flights-header-date">
+                            <input type="text" name="flydate" placeholder="mm/dd/yy" class="holidays-header-src" id="flights-header-date">
                         </div>
                     </div>
                     <button class="flights-header-btn">Check Rates</button>
