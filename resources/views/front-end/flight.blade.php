@@ -321,7 +321,8 @@ Flight Page
                                     <div class="col-md-2 col-sm-2">
                                         <h1>{{ $fshow->airline_economy_price }} tk</h1>
                                         <h5>Price Start</h5><br>
-                                        <a href="#" class="hotel-right-btn">Book now</a>
+                                        <a href="{{ route('book-details', ['id'=>$fshow->id]) }}" class="hotel-right-btn">Book
+                                            now</a>
                                         {{-- <button class="hotel-right-btn">book now
                                         </button> --}}
                                     </div>

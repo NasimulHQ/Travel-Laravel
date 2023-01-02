@@ -72,6 +72,8 @@ Route::get('delete-flight/{id}', [FlightController::class, 'destroy']);
 
 //Flight Search
 Route::get('check', [FlightController::class, 'check']);
+//Flight Details
+Route::get('book-details/{id}', [FlightController::class, 'bookdetail'])->name('book-details');
 
 
 

@@ -176,6 +176,7 @@ class FlightController extends Controller
     public function check(Request $request)
     {
         // dd($request->get('departure');
+
         if($request->departure && $request->arrive)
         {
         $flight = Flight::where('airline_form', 'LIKE', '%' . $request->departure . '%')
@@ -193,6 +194,15 @@ class FlightController extends Controller
         // ->get();
 
         return view('front-end.flight', compact('flight'));
+    }
+    // Flight Details
+    public function bookdetail($id)
+    {
+        $flight = Flight::find($id);
+        if (!$flight) {
+            return redirect()->to('flight');
+        }
+        return view('front-end.bookdetails', compact('flight'));
     }
 
 

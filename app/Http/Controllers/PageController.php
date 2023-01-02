@@ -27,7 +27,7 @@ class PageController extends Controller
     }
     public function flights()
     {
-        $flight = Flight::select('airline_image', 'airline_title', 'airline_form', 'airline_destination', 'airline_date', 'airline_departure_time', 'airline_arrival_time', 'airline_duration', 'airline_economy_seat', 'airline_business_seat', 'airline_economy_price', 'airline_business_price', 'airline_payment')
+        $flight = Flight::select('id', 'airline_image', 'airline_title', 'airline_form', 'airline_destination', 'airline_date', 'airline_departure_time', 'airline_arrival_time', 'airline_duration', 'airline_economy_seat', 'airline_business_seat', 'airline_economy_price', 'airline_business_price', 'airline_payment')
         ->orderBy('id', 'asc')
         ->get();
         return view('front-end.flight', compact('flight'));

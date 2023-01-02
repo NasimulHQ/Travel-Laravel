@@ -63,9 +63,6 @@ Hotel Booking Details Page
                                     <h3>Price: {{$hotel->hotel_price}}</h2>
                                 </div>
                                 <a href="" class="btn btn-primary">Book</a>
-                                {{-- <div class="content">
-                                    <p>{{$hotel->hotel_price}}</p>
-                                </div> --}}
                             </div>
                         </div>
                     </div>
