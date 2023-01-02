@@ -41,7 +41,7 @@ Flight Booking Details Page
         <!-- end Main-Nav -->
     </div>
     <div class="main-headline wow animate bounceIn" data-wow-duration="1.8s" style="text-align: center; margin-top:180px; color:white">
-        <h1>Flight Details</h1>
+        <h1 style="font-size:60px;">Flight Details</h1>
         <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Dhaka, Bangladesh</p>
     </div>
 </header>
@@ -90,7 +90,30 @@ Flight Booking Details Page
             </div>
             
             <div class="col-md-4">
-                
+                <div class="card" style="margin-top: 10px; border-radius: 15px;">
+                    <div class="card-inner" style="height: 300px;">
+                        <div class="header">
+                            <div class="firststep">
+                                <h2>{{$flight->airline_title}}</h2>
+                            </div><br>
+                            <div class="secondstep">
+                                <h4>Fare Summary</h4>
+                                <div class="col-sm-6">
+                                    <h5>Economy Seat</h5>
+                                    <h2>{{$flight->airline_economy_seat}}</h2>
+                                    <h5>Business Seat</h5>
+                                    <h3>{{$flight->airline_business_seat}}</h3>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h5>Economy Price</h5>
+                                    <h2>{{ $flight->airline_economy_price}} tk</h2>
+                                    <h5>Business Price</h5>
+                                    <h2>{{ $flight->airline_business_price}} tk</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
