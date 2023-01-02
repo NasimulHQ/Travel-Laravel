@@ -171,52 +171,6 @@ Flight Page
         <div class="container">
             <!-- main-nav -->
             @include('front-end.layout.navbar')
-            {{-- <div class="main-nav">
-                <nav class="navbar navbar-default">
-                    <div class="container-fluid">
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <div class="main-logo">
-                                <a class="navbar-brand" href="{{ asset('front') }}/#">TRAVEL</a>
-                            </div>
-                        </div>
-
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav">
-
-                            </ul>
-                            <form class="navbar-form navbar-left">
-                                <div class="form-group">
-                                </div>
-                            </form>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class=""><a href="{{ asset('front') }}/index.html"><i class="fa fa-home"
-                                            aria-hidden="true"></i>&nbsp;HOME</a></li>
-                                <li class="active"><a href="{{ asset('front') }}/flights.html"><i class="fa fa-plane"
-                                            aria-hidden="true"></i>&nbsp;FLIGHTS</a></li>
-                                <li><a href="{{ asset('front') }}/hotel.html"><i class="fa fa-building"
-                                            aria-hidden="true"></i>&nbsp;HOTELS</a></li>
-                                <li><a href="{{ asset('front') }}/holidays.html"><i class="fa fa-gift"
-                                            aria-hidden="true"></i>&nbsp;HOLIDAY</a></li>
-                                <li><a href="{{ asset('front') }}/blog.html"><i class="fa fa-pencil"
-                                            aria-hidden="true"></i>&nbsp;BLOG</a>
-                                </li>
-                                <li><a href="{{ asset('front') }}/#"><i class="fa fa-phone"
-                                            aria-hidden="true"></i>&nbsp;+880-1627402376</a>
-                                </li>
-                            </ul>
-                        </div><!-- /.navbar-collapse -->
-                    </div><!-- /.container-fluid -->
-                </nav>
-            </div> --}}
             <!-- end Main-Nav -->
 
         </div>
@@ -264,36 +218,7 @@ Flight Page
                                     </div>
                                     <div class="col-md-6 col-sm-6" style="text-align: left">
                                         <h2>{{ $fshow->airline_title }}</h2>
-                                        {{-- <table>
-                                            <tr>
-                                                <td>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star "></span>
-                                                    <span class="fa fa-star"></span>
-                                                    &nbsp;&nbsp;/
-                                                </td>
-                                                <td>
-                                                    <p class="map-p"><i class="fa fa-map-o" aria-hidden="true"></i>&nbsp;
-                                                        View Map &nbsp; / </p>
-                                                </td>
-                                                <td>
-                                                    <p>&nbsp;<i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;24
-                                                        Reviews</p>
-                                                </td>
-                                            </tr>
-                                        </table> --}}
-                                        {{-- <ul>
-                                            <li><i class="fa fa-wifi" aria-hidden="true" title="wifi"></i></li>
-                                            <li><i class="fa fa-glass" aria-hidden="true" title="Bar"></i></li>
-                                            <li><i class="fa fa-random" aria-hidden="true" title="A/C"></i></li>
-                                            <li><i class="fa fa-cutlery" aria-hidden="true" title="Resturant"></i></li>
-                                            <li style="background:#d1d1d1;"><i class="fa fa-arrows-h" aria-hidden="true"
-                                                    title="GYM not Avilable"></i></li>
-                                            <li><i class="fa fa-bell" aria-hidden="true" title="Room Service"></i></li>
-                                            <li><i class="fa fa-coffee" aria-hidden="true" title="Cafe"></i></li>
-                                        </ul> --}}
+                                        
                                      <div class="col-md-12" style="margin-top: -40px">
                                         <div class="col-md-3">
                                                 <h3 class="hotel-title">

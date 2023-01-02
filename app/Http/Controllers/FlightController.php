@@ -204,6 +204,12 @@ class FlightController extends Controller
         }
         return view('front-end.bookdetails', compact('flight'));
     }
+    // Traveler Detail
+    public function travelerdetail($id)
+    {
+        $flight = Flight::find($id);
+        return view('front-end.travelerdetails', compact('flight'));
+    }
 
 
 
