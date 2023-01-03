@@ -61,18 +61,19 @@ Flight Booking Traveler Details Page
                                     @endif
                                     <div class="box">
                                         <div class="box-body">
-                                            <form action="" method="POST" enctype="multipart/form-data">
+                                            <form action="{{ route('travel-submit')}}" method="POST" enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="form-group">
                                                     <label for="">Name</label>
-                                                    <input type="text" class="form-control" name="airline_image" placeholder="Enter Your Full Name">
-                                                    @error('airline_image')
+                                                    <input type="text" class="form-control" name="tr_name" placeholder="Enter Your Full Name">
+                                                    @error('tr_name')
                                                     <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
                                                 
                                                     <div class="form-group">
-                                                        <label for="">Seat Class</label>
+                                                        <label for="">Seat/Class</label>
+                                                        <input type="text" class="form-control" name="tr_seat" placeholder="Enter Your seat">
                                                         <select class="form-control">
                                                             <option selected value="1">Economy</option>
                                                             <option value="2">Business</option>
@@ -82,37 +83,37 @@ Flight Booking Traveler Details Page
                                                
                                                 <div class="form-group">
                                                     <label for="">Passport Number:</label>
-                                                    <input type="text" class="form-control" name="airline_title" placeholder="Enter your Passport Number">
-                                                    @error('airline_title')
+                                                    <input type="text" class="form-control" name="tr_passportnum" placeholder="Enter your Passport Number">
+                                                    @error('tr_passportnum')
                                                     <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="">Date of Birth</label>
-                                                    <input type="date" class="form-control" name="airline_form">
-                                                    @error('airline_form')
+                                                    <input type="date" class="form-control" name="tr_date_of_birth">
+                                                    @error('tr_date_of_birth')
                                                     <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="">Passport Expiry Date</label>
-                                                    <input type="date" class="form-control" name="airline_destination">
-                                                    @error('airline_destination')
+                                                    <input type="date" class="form-control" name="tr_expiry_date">
+                                                    @error('tr_expiry_date')
                                                     <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="">City</label>
-                                                    <input type="text" class="form-control" name="airline_date" placeholder="Enter your City">
-                                                    @error('airline_date')
+                                                    <input type="text" class="form-control" name="tr_city" placeholder="Enter your City">
+                                                    @error('tr_city')
                                                     <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="">Country</label>
-                                                    <input type="text" class="form-control" name="airline_departure_time"
+                                                    <input type="text" class="form-control" name="tr_country"
                                                         placeholder="Enter your Country Name">
-                                                    @error('airline_departure_time')
+                                                    @error('tr_country')
                                                     <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
@@ -120,16 +121,16 @@ Flight Booking Traveler Details Page
                                                 <h2>Contact Details</h2>
                                                 <div class="form-group">
                                                     <label for="">Email</label>
-                                                    <input type="text" class="form-control" name="airline_arrival_time"
+                                                    <input type="text" class="form-control" name="tr_email"
                                                         placeholder="Enter your Email">
-                                                    @error('airline_arrival_time')
+                                                    @error('tr_email')
                                                     <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="">Phone Number</label>
-                                                    <input type="number" class="form-control" name="airline_duration" placeholder="Enter your Phone Number">
-                                                    @error('airline_duration')
+                                                    <input type="number" class="form-control" name="tr_phone" placeholder="Enter your Phone Number">
+                                                    @error('tr_phone')
                                                     <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>

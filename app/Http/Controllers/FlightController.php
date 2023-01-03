@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Flight;
+use App\Models\TravelerBook;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -211,8 +212,39 @@ class FlightController extends Controller
     // Traveler Detail
     public function travelerdetail()
     {
-       $flight = Flight::all();
-        return view('front-end.travelerdetails', compact('flight'));
+        return view('front-end.travelerdetails');
+    }
+
+    public function tarvelsubmit(Request $request)
+    {
+        $this->validate(
+            $request,
+            [
+                'tr_name' => 'required|min:3|max:199|string',
+                // 'tr_seat' => 'required|min:3|max:199|string',
+                'tr_passportnum' => 'required|min:3|max:199|string',
+                // 'tr_date_of_birth' => 'required|min:3|max:199|string',
+                // 'tr_expiry_date' => 'required|min:3|max:199|string',
+                'tr_city' => 'required|min:3|max:199|string',
+                'tr_country' => 'required|min:3|max:199|string',
+                'tr_email' => 'required|min:3|max:199|string',
+                'tr_phone' => 'required|min:3|max:199|string',
+
+            ]
+        );
+
+        $travelbook = new TravelerBook();
+        $travelbook->tr_name = $request->input('tr_name');
+        $travelbook->tr_seat = $request->input('tr_seat');
+        $travelbook->tr_passportnum = $request->input('tr_passportnum');
+        $travelbook->tr_date_of_birth = $request->input('tr_date_of_birth');
+        $travelbook->tr_expiry_date = $request->input('tr_expiry_date');
+        $travelbook->tr_city = $request->input('tr_city');
+        $travelbook->tr_country = $request->input('tr_country');
+        $travelbook->tr_email = $request->input('tr_email');
+        $travelbook->tr_phone = $request->input('tr_phone');
+        $travelbook->save();
+        return redirect()->back()->with('status', 'Flight book successfully done');
     }
 
 
