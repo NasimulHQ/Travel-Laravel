@@ -205,10 +205,10 @@ class FlightController extends Controller
         return view('front-end.bookdetails', compact('flight'));
     }
     // Traveler Detail
-    public function travelerdetail($id)
+    public function travelerdetail()
     {
-        $flight = Flight::find($id);
-        return view('front-end.travelerdetails', compact('flight'));
+       
+        return view('front-end.travelerdetails');
     }
 
 

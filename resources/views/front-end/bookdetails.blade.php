@@ -50,9 +50,6 @@ Flight Booking Details Page
  <section>
     <div class="container" style="margin-top: 300px;">
         <div class="row">
-            @foreach ($flight as $fshow)
-                
-           
             <div class="col-md-8">
                 <div class="card" style="margin-top: 10px; border-radius: 15px;">
                     <div class="image">
@@ -86,12 +83,11 @@ Flight Booking Details Page
                                     <h3>{{$flight->airline_destination}}</h3>
                                 </div>
                             </div>
-                            <a href="{{ route('traveler-detail', ['id'=>$fshow->id]) }}"" class="btn btn-primary" style="margin: 20px 240px; padding:10px 50px; font-size:15px;">Continue</a>
+                            <a href="{{ route('traveler-detail') }}" class="btn btn-primary" style="margin: 20px 240px; padding:10px 30px; background: #983333">Continue</a>
                         </div>
                     </div>
                 </div>
             </div>
-            @endforeach
             
             <div class="col-md-4">
                 <div class="card" style="margin-top: 10px; border-radius: 15px;">

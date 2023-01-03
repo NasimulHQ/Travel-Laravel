@@ -75,7 +75,7 @@ Route::get('check', [FlightController::class, 'check']);
 //Flight Details
 Route::get('book-details/{id}', [FlightController::class, 'bookdetail'])->name('book-details');
 //Traveler details
-Route::get('traveler-detail/{id}', [FlightController::class, 'travelerdetail'])->name('traveler-detail');
+Route::get('traveler-detail', [FlightController::class, 'travelerdetail'])->name('traveler-detail');
 
 
 
