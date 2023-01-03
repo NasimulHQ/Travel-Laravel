@@ -21,6 +21,7 @@ Admin Dashboard
                 <thead>
                     <tr>
                         <th>Id</th>
+                        <th>Airline Flight Num</th>
                         <th>Name</th>
                         <th>Seat</th>
                         <th>Passport Number</th>
@@ -37,6 +38,7 @@ Admin Dashboard
                     @foreach ($bookflight as $bookshow)
                     <tr>
                         <td>{{ $loop->iteration}}</td>
+                        <td>{{ $bookshow->flight_no}}</td>
                         <td>{{ $bookshow->tr_name }}</td>
                         <td>{{ $bookshow->tr_seat }}</td>
                         <td>{{ $bookshow->tr_passportnum }}</td>

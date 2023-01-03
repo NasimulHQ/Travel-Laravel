@@ -210,9 +210,8 @@ class FlightController extends Controller
         return view('front-end.bookdetails', compact('flight'));
     }
     // Traveler Detail
-    public function travelerdetail()
-    {
-        return view('front-end.travelerdetails');
+    public function travelerdetail($flight_num){
+            return view('front-end.travelerdetails', compact('flight_num'));
     }
 
     //tarveler booking flight confirm with information
@@ -236,6 +235,7 @@ class FlightController extends Controller
 
         $travelbook = new TravelerBook();
         $travelbook->tr_name = $request->input('tr_name');
+        $travelbook->flight_no = $request->input('flight_no');
         $travelbook->tr_seat = $request->input('tr_seat');
         $travelbook->tr_passportnum = $request->input('tr_passportnum');
         $travelbook->tr_date_of_birth = $request->input('tr_date_of_birth');

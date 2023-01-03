@@ -88,7 +88,7 @@ Flight Booking Details Page
                                 </div>
                             </div>
                             
-                            <a href="{{ route('traveler-detail') }}" class="btn btn-primary" style="margin: 20px 240px; padding:10px 30px; background: #983333">Continue</a>
+                            <a href="{{ route('traveler-detail',['booking_id'=>$flight->airline_flight_num]) }}" class="btn btn-primary" style="margin: 20px 240px; padding:10px 30px; background: #983333">Continue</a>
                         {{-- </div> --}}
                     </div>
                 </div>

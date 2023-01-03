@@ -63,6 +63,7 @@ Flight Booking Traveler Details Page
                                         <div class="box-body">
                                             <form action="{{ route('travel-submit')}}" method="POST" enctype="multipart/form-data">
                                                 @csrf
+                                                <input type="hidden" name="flight_no" value="{{$flight_num}}">
                                                 <div class="form-group">
                                                     <label for="">Name</label>
                                                     <input type="text" class="form-control" name="tr_name" placeholder="Enter Your Full Name">
@@ -70,17 +71,13 @@ Flight Booking Traveler Details Page
                                                     <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
-                                                
-                                                    <div class="form-group">
+                                                <div class="form-group">
                                                         <label for="">Seat/Class</label>
-                                                        <input type="text" class="form-control" name="tr_seat" placeholder="Enter Your seat">
-                                                        <select class="form-control">
-                                                            <option selected value="1">Economy</option>
-                                                            <option value="2">Business</option>
+                                                        <select class="form-control" name="tr_seat">
+                                                            <option selected value="Economy">Economy</option>
+                                                            <option value="Business">Business</option>
                                                         </select>
-                                                    </div>
-                                                
-                                               
+                                                </div>
                                                 <div class="form-group">
                                                     <label for="">Passport Number:</label>
                                                     <input type="text" class="form-control" name="tr_passportnum" placeholder="Enter your Passport Number">

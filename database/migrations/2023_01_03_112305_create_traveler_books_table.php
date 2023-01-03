@@ -16,6 +16,7 @@ class CreateTravelerBooksTable extends Migration
         Schema::create('traveler_books', function (Blueprint $table) {
             $table->id();
             $table->string('tr_name');
+            $table->string('flight_no');
             $table->string('tr_seat');
             $table->string('tr_passportnum');
             $table->string('tr_date_of_birth');
