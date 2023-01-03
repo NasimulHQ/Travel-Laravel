@@ -215,6 +215,7 @@ class FlightController extends Controller
         return view('front-end.travelerdetails');
     }
 
+    //tarveler booking flight confirm with information
     public function tarvelsubmit(Request $request)
     {
         $this->validate(
@@ -247,6 +248,18 @@ class FlightController extends Controller
         return redirect()->back()->with('status', 'Flight book successfully done');
     }
 
+    //Book Flight index (Dashboard)
+    public function bookflight()
+    {
+        $bookflight = TravelerBook::all();
+        return view('admin.booked.index', compact('bookflight'));
+    }
+    public function destroybookflight($id)
+    {
+        $bookflight = TravelerBook::find($id);
+        $bookflight->delete();
+        return redirect()->back()->with('status', 'Book Flight delete successfully done');
+    }
 
 
 
