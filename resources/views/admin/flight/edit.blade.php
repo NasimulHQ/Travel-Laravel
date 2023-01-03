@@ -43,6 +43,14 @@ Admin Dashboard
                         @enderror
                     </div>
                     <div class="form-group">
+                        <label for="">Airline Flight Number:</label>
+                        <input type="text" class="form-control" name="airline_flight_num" value="{{ $flight->airline_flight_num}}"
+                            placeholder="Enter the airline flight number">
+                        @error('airline_title')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
                         <label for="">Airline Form/Departure:</label>
                         <input type="text" class="form-control" name="airline_form"
                         value="{{ $flight->airline_form }}" placeholder="Enter the departure location">

@@ -56,35 +56,40 @@ Flight Booking Details Page
                         <img src="{{ asset('uploads/flights/'.$flight->airline_image)}}" height="280px" alt="image">
                     </div>
                     <div class="card-inner">
-                        <div class="header">
+                        {{-- <div class="header"> --}}
                             <div class="firststep">
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <h2>Airline Name</h2>
+                                </div>
+                                <div class="col-sm-2">
+                                    <h4 style="margin-top: 30px;">{{ $flight->airline_flight_num}}</h4>
                                 </div>
                                 <div class="col-sm-6">
                                     <h2>{{$flight->airline_title}}</h2>
                                 </div>
                             </div>
+                            <br>
                             <div class="secondstep">
-                                <div class="col-sm-4">
+                                <div class="col-sm-4" style="padding-left: 80px;">
                                     <h5>Depart</h5>
                                     <h2>{{$flight->airline_departure_time}}</h2>
                                     <h5>{{$flight->airline_date}}</h5>
                                     <h3>{{$flight->airline_form}}</h3>
                                 </div>
-                                <div class="col-sm-4" style="margin-top: 45px;">
+                                <div class="col-sm-3" style="margin-top: 45px;">
                                     <p>Duration</p>
                                     <h5>{{ $flight->airline_duration}}</h5>
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-5">
                                     <h5>Arrival</h5>
                                     <h2>{{$flight->airline_arrival_time}}</h2>
                                     <h5>{{$flight->airline_date}}</h5>
                                     <h3>{{$flight->airline_destination}}</h3>
                                 </div>
                             </div>
+                            
                             <a href="{{ route('traveler-detail') }}" class="btn btn-primary" style="margin: 20px 240px; padding:10px 30px; background: #983333">Continue</a>
-                        </div>
+                        {{-- </div> --}}
                     </div>
                 </div>
             </div>

@@ -22,18 +22,19 @@ Admin Dashboard
                     <tr>
                         <th>Id</th>
                         <th>Airline Image</th>
-                        <th>Airline Title</th>
-                        <th>Airline form</th>
-                        <th>Airline destination</th>
-                        <th>Airline date</th>
-                        <th>Airline departure time</th>
-                        <th>Airline arrival time</th>
-                        <th>Airline duration</th>
-                        <th>Airline economy seat</th>
-                        <th>Airline business seat</th>
-                        <th>Airline economy price</th>
-                        <th>Airline business price</th>
-                        <th>Airline payment</th>
+                        <th>Air Title</th>
+                        <th>Air Flight Num</th>
+                        <th>Airform</th>
+                        <th>Air destin</th>
+                        <th>Air date</th>
+                        <th>Air depart time</th>
+                        <th>Air arrival time</th>
+                        <th>Air duration</th>
+                        <th>Air econ seat</th>
+                        <th>Air busin seat</th>
+                        <th>Air econ price</th>
+                        <th>Air busin price</th>
+                        <th>Air payment</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -46,6 +47,7 @@ Admin Dashboard
                                 alt="image">
                         </td>
                         <td>{{ $fshow->airline_title }}</td>
+                        <td>{{ $fshow->airline_flight_num }}</td>
                         <td>{{ $fshow->airline_form }}</td>
                         <td>{{ $fshow->airline_destination}}</td>
                         <td>{{ $fshow->airline_date}}</td>

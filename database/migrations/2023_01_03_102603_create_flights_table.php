@@ -17,6 +17,7 @@ class CreateFlightsTable extends Migration
             $table->id();
             $table->string('airline_image');
             $table->string('airline_title');
+            $table->string('airline_flight_num');
             $table->string('airline_form');
             $table->string('airline_destination');
             $table->string('airline_date');

@@ -64,12 +64,22 @@ Flight Booking Traveler Details Page
                                             <form action="" method="POST" enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="form-group">
-                                                    <label for="">Traveler Name</label>
+                                                    <label for="">Name</label>
                                                     <input type="text" class="form-control" name="airline_image" placeholder="Enter Your Full Name">
                                                     @error('airline_image')
                                                     <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
+                                                
+                                                    <div class="form-group">
+                                                        <label for="">Seat Class</label>
+                                                        <select class="form-control">
+                                                            <option selected value="1">Economy</option>
+                                                            <option value="2">Business</option>
+                                                        </select>
+                                                    </div>
+                                                
+                                               
                                                 <div class="form-group">
                                                     <label for="">Passport Number:</label>
                                                     <input type="text" class="form-control" name="airline_title" placeholder="Enter your Passport Number">

@@ -13,6 +13,7 @@ class Flight extends Model
     [
         'airline_image',
         'airline_title',
+        'airline_flight_num',
         'airline_form',
         'airline_destination',
         'airline_date',

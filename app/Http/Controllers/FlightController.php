@@ -42,6 +42,7 @@ class FlightController extends Controller
             [
                 'airline_image' => 'required|image|mimes:jpeg,jpg,gif,png,svg|max:2048',
                 'airline_title' => 'required|min:3|max:199|string',
+                'airline_flight_num' => 'required|min:3|max:199|string',
                 'airline_form' => 'required|min:3|max:199|string',
                 'airline_destination' => 'required|min:3|max:199|string',
                 // 'airline_date' => 'required|min:3|max:199|string',
@@ -65,6 +66,7 @@ class FlightController extends Controller
             $flight->airline_image = $filename;
         }
         $flight->airline_title = $request->input('airline_title');
+        $flight->airline_flight_num = $request->input('airline_flight_num');
         $flight->airline_form = $request->input('airline_form');
         $flight->airline_destination = $request->input('airline_destination');
         $flight->airline_date = $request->input('airline_date');
@@ -117,6 +119,7 @@ class FlightController extends Controller
             [
                 'airline_image' => 'required|image|mimes:jpeg,jpg,gif,png,svg|max:2048',
                 'airline_title' => 'required|min:3|max:199|string',
+                'airline_flight_num' => 'required|min:3|max:199|string',
                 'airline_form' => 'required|min:3|max:199|string',
                 'airline_destination' => 'required|min:3|max:199|string',
                 // 'airline_date' => 'required|min:3|max:199|string',
@@ -140,6 +143,7 @@ class FlightController extends Controller
             $flight->airline_image = $filename;
         }
         $flight->airline_title = $request->input('airline_title');
+        $flight->airline_flight_num = $request->input('airline_flight_num');
         $flight->airline_form = $request->input('airline_form');
         $flight->airline_destination = $request->input('airline_destination');
         $flight->airline_date = $request->input('airline_date');
@@ -207,8 +211,8 @@ class FlightController extends Controller
     // Traveler Detail
     public function travelerdetail()
     {
-       
-        return view('front-end.travelerdetails');
+       $flight = Flight::all();
+        return view('front-end.travelerdetails', compact('flight'));
     }
 
 
