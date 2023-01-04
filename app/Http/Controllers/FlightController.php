@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Flight;
+use App\Mail\FlightBookMail;
 use App\Models\TravelerBook;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Mail;
 
 class FlightController extends Controller
 {
@@ -245,7 +247,14 @@ class FlightController extends Controller
         $travelbook->tr_email = $request->input('tr_email');
         $travelbook->tr_phone = $request->input('tr_phone');
         $travelbook->save();
-        return redirect()->back()->with('status', 'Flight book successfully done');
+
+        $send_mail = $request->input('tr_email');
+        $flight_no = $request->input('flight_no');
+        $tr_seat = $request->input('tr_seat');
+        $title = "Congratulations! Successfully you booked an Air Flight";
+
+        Mail::to($send_mail)->send(new FlightBookMail($flight_no, $tr_seat, $title));
+        return redirect()->back()->with('status', 'Flight book successfully done, check your Email');
     }
 
     //Book Flight index (Dashboard)

@@ -1,15 +1,17 @@
 <?php
 
-use App\Http\Controllers\FeaturePostController;
-use App\Http\Controllers\FlightController;
-use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\HotelController;
-use App\Http\Controllers\LatestBlogController;
-use App\Http\Controllers\PackageController;
+// use Mail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\testController;
+use App\Http\Controllers\HotelController;
+use App\Http\Controllers\FlightController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\PackageController;
+use App\Http\Controllers\LatestBlogController;
+use App\Http\Controllers\FeaturePostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,13 +74,15 @@ Route::get('delete-flight/{id}', [FlightController::class, 'destroy']);
 
 //Flight Search
 Route::get('check', [FlightController::class, 'check']);
+
 //Flight Details
 Route::get('book-details/{id}', [FlightController::class, 'bookdetail'])->name('book-details');
+
 //Traveler details
 Route::get('traveler-detail/{booking_id}', [FlightController::class, 'travelerdetail'])->name('traveler-detail');
 Route::post('travel-submit', [FlightController::class, 'tarvelsubmit'])->name('travel-submit');
 
-//Dashboard index
+//Book Flight Dashboard index
 Route::get('book-flight', [FlightController::class, 'bookflight'])->name('book-flight');
 Route::get('delete-bookflight/{id}', [FlightController::class, 'destroybookflight']);
 
@@ -112,3 +116,14 @@ Route::get('delete-latestblog/{id}', [LatestBlogController::class, 'destroy']);
 Route::get('extra', [HotelController::class, 'extra']);
 
 
+// Route::get('send-mail', function () {
+
+//     $details = [
+//         'title' => 'Mail from ItSolutionStuff.com',
+//         'body' => 'This is for testing email using smtp'
+//     ];
+
+//     Mail::to('your_receiver_email@gmail.com')->send(new \App\Mail\MyTestMail($details));
+
+//     dd("Email is Sent.");
+// });
