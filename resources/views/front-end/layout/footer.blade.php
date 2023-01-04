@@ -5,9 +5,9 @@
             <div class="col-md-4 col-sm-12">
                 <div class="footer-txt">
                     <p>call us :</p>
-                    <h2>(91) 22 84551445 </h2>
+                    <h2>01840000000 </h2>
                     <p>Send an Enquiry:</p>
-                    <h2>travel@canvas.com </h2>
+                    <h2>travelwhat.com </h2>
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="ficon">
@@ -44,7 +44,7 @@
                             </div>
                             <div class="col-md-9 col-sm-9 col-xs-9">
                                 <h4><a href="{{ asset('front')}}/#">7 Nights/8 Days Europe</a></h4>
-                                <p>$599 onwards</p>
+                                <p>1.10 lakhs tk onwards</p>
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                             </div>
                             <div class="col-md-9 col-sm-9 col-xs-9">
                                 <h4><a href="{{ asset('front')}}/#">4 Nights/5 Days Thailand</a></h4>
-                                <p>$399 onwards</p>
+                                <p>60000 tk onwards</p>
                             </div>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                             </div>
                             <div class="col-md-9 col-sm-9 col-xs-9">
                                 <h4><a href="{{ asset('front')}}/#">11 Nights/12 Days America</a></h4>
-                                <p>$1299 onwards</p>
+                                <p>1.50 lakhs tk onwards</p>
                             </div>
                         </div>
                     </div>
@@ -127,7 +127,7 @@
         <div class="row">
             <div class="col-md-6 col-sm-6">
                 <div class="footer-bottom-txt">
-                    <p>Copyrights &copy; 2017 All Rights Reserved by Travel Inc.</p>
+                    <p>Copyrights &copy; All Rights Reserved by Travel Inc.</p>
                     <p><a href="{{ asset('front')}}/#">Terms of Use</a>/<a href="{{ asset('front')}}/#"
                             style="margin-left:15px;">Privacy Policy</a></p>
                 </div>
