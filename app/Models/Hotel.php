@@ -9,12 +9,17 @@ class Hotel extends Model
 {
     use HasFactory;
     protected $table = 'hotels';
-    protected $fillable = 
+    protected $fillable =
     [
         'hotel_image',
         'hotel_title',
         'hotel_location',
-        'hotel_price',
         'hotel_rating',
+        'hotel_description',
+        'hotel_singlebed',
+        'hotel_doublebed',
+        'hotel_singlebed_price',
+        'hotel_doublebed_price',
+        'hotel_payment',
     ];
 }

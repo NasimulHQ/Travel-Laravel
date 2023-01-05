@@ -24,8 +24,13 @@ Admin Dashboard
                         <th>Hotel Image</th>
                         <th>Hotel Title</th>
                         <th>Hotel Location</th>
-                        <th>Hotel Price</th>
+                        <th>Hotel Descrp</th>
                         <th>Hotel Rating</th>
+                        <th>Hotel SinBed</th>
+                        <th>Hotel DoubBed</th>
+                        <th>Hotel SinBed Price</th>
+                        <th>Hotel DoubBed Price</th>
+                        <th>Hotel Payment</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -38,8 +43,13 @@ Admin Dashboard
                         </td>
                         <td>{{ $show->hotel_title }}</td>
                         <td>{{ $show->hotel_location }}</td>
-                        <td>{{ $show->hotel_price}}</td>
+                        <td>{{ $show->hotel_description}}</td>
                         <td>{{ $show->hotel_rating}}</td>
+                        <td>{{ $show->hotel_singlebed}}</td>
+                        <td>{{ $show->hotel_doublebed}}</td>
+                        <td>{{ $show->hotel_singlebed_price}}</td>
+                        <td>{{ $show->hotel_doublebed_price}}</td>
+                        <td>{{ $show->hotel_payment}}</td>
                         <td>
                             <a href="{{ url('edit-hotel/'.$show->id)}}" class="btn btn-info">Edit</a>
                             <a href="{{ url('delete-hotel/'.$show->id)}}" class="btn btn-danger">Delete</a>

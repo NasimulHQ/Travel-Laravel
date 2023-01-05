@@ -18,8 +18,13 @@ class CreateHotelsTable extends Migration
             $table->string('hotel_image');
             $table->string('hotel_title');
             $table->string('hotel_location');
-            $table->string('hotel_price');
             $table->string('hotel_rating');
+            $table->string('hotel_description');
+            $table->string('hotel_singlebed');
+            $table->string('hotel_doublebed');
+            $table->string('hotel_singlebed_price');
+            $table->string('hotel_doublebed_price');
+            $table->string('hotel_payment');
             $table->timestamps();
         });
     }

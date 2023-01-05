@@ -36,7 +36,7 @@ Route::get('/blogs', [PageController::class, 'blogs'])->name('blog');
 
 Auth::routes();
 
-Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.home');
 
 // Gallery Route
 Route::get('gallerys', [GalleryController::class, 'index']);

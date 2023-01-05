@@ -43,8 +43,14 @@ class HotelController extends Controller
                 'hotel_image' => 'required|image|mimes:jpeg,jpg,gif,png,svg|max:2048',
                 'hotel_title' => 'required|min:3|max:199|string',
                 'hotel_location' => 'required|min:3|max:199|string',
-                'hotel_price' => 'required|min:3|max:199|string',
                 // 'hotel_rating' => 'required|min:3|max:199|string'
+                'hotel_description' => 'required|min:3|max:199|string',
+                // 'hotel_singlebed' => 'required|min:3|max:199|string',
+                // 'hotel_doublebed' => 'required|min:3|max:199|string',
+                // 'hotel_singlebed_price' => 'required|min:3|max:199|string',
+                // 'hotel_doublebed_price' => 'required|min:3|max:199|string',
+                'hotel_payment' => 'required|min:3|max:199|string',
+                
 
             ]
         );
@@ -58,8 +64,13 @@ class HotelController extends Controller
         }
         $hotel->hotel_title = $request->input('hotel_title');
         $hotel->hotel_location = $request->input('hotel_location');
-        $hotel->hotel_price = $request->input('hotel_price');
         $hotel->hotel_rating = $request->input('hotel_rating');
+        $hotel->hotel_description = $request->input('hotel_description');
+        $hotel->hotel_singlebed = $request->input('hotel_singlebed');
+        $hotel->hotel_doublebed = $request->input('hotel_doublebed');
+        $hotel->hotel_singlebed_price = $request->input('hotel_singlebed_price');
+        $hotel->hotel_doublebed_price = $request->input('hotel_doublebed_price');
+        $hotel->hotel_payment = $request->input('hotel_payment');
         $hotel->save();
         return redirect()->back()->with('status', 'Hotel Upload successfully done');
     }
@@ -102,8 +113,14 @@ class HotelController extends Controller
                 'hotel_image' => 'required|image|mimes:jpeg,jpg,gif,png,svg|max:2048',
                 'hotel_title' => 'required|min:3|max:199|string',
                 'hotel_location' => 'required|min:3|max:199|string',
-                'hotel_price' => 'required|min:3|max:199|string',
                 // 'hotel_rating' => 'required|min:3|max:199|string'
+                'hotel_description' => 'required|min:3|max:199|string',
+                // 'hotel_singlebed' => 'required|min:3|max:199|string',
+                // 'hotel_doublebed' => 'required|min:3|max:199|string',
+                // 'hotel_singlebed_price' => 'required|min:3|max:199|string',
+                // 'hotel_doublebed_price' => 'required|min:3|max:199|string',
+                'hotel_payment' => 'required|min:3|max:199|string',
+                
 
             ]
         );
@@ -117,8 +134,13 @@ class HotelController extends Controller
         }
         $hotel->hotel_title = $request->input('hotel_title');
         $hotel->hotel_location = $request->input('hotel_location');
-        $hotel->hotel_price = $request->input('hotel_price');
         $hotel->hotel_rating = $request->input('hotel_rating');
+        $hotel->hotel_description = $request->input('hotel_description');
+        $hotel->hotel_singlebed = $request->input('hotel_singlebed');
+        $hotel->hotel_doublebed = $request->input('hotel_doublebed');
+        $hotel->hotel_singlebed_price = $request->input('hotel_singlebed_price');
+        $hotel->hotel_doublebed_price = $request->input('hotel_doublebed_price');
+        $hotel->hotel_payment = $request->input('hotel_payment');
         $hotel->update();
         return redirect()->back()->with('status', 'Hotel update successfully done');
     }
