@@ -248,7 +248,7 @@ Hotel Page
                             </div>
                         </div>
                         <!-- hotel left price -->
-                        <div class="hotel-left-price">
+                        {{-- <div class="hotel-left-price">
                             <h4>PRICE</h4>
                             <div class="check-div">
                                 <ul>
@@ -292,7 +292,7 @@ Hotel Page
                                     </li>
                                 </ul>
                             </div><br><br>
-                        </div>
+                        </div> --}}
 
                         <div class="rating">
                             <h4 style="margin-bottom: 20px;">STAR RATING</h4>
@@ -334,11 +334,8 @@ Hotel Page
                                     <table>
                                         <tr>
                                             <td>
+                                                <span>{{ $show->hotel_rating}}</span>
                                                 <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star "></span>
-                                                <span class="fa fa-star"></span>
                                                 &nbsp;&nbsp;/
                                             </td>
                                             <td>
@@ -366,7 +363,7 @@ Hotel Page
                                     </p>
                                 </div>
                                 <div class="col-md-2 col-sm-2">
-                                    <h1>{{ $show->hotel_price}}</h1>
+                                    <h1>{{ $show->hotel_singlebed_price}}tk</h1>
                                     <h5>Price per Night</h5><br>
                                     <a href="{{ route('book-now', ['id'=>$show->id]) }}" class="hotel-right-btn">Book
                                         now</a>

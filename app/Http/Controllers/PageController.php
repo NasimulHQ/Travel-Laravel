@@ -34,7 +34,7 @@ class PageController extends Controller
     }
     public function hotel()
     {
-        $hotel = Hotel::select('id', 'hotel_image', 'hotel_title', 'hotel_location')
+        $hotel = Hotel::select('id', 'hotel_image', 'hotel_title', 'hotel_location', 'hotel_rating', 'hotel_description', 'hotel_singlebed', 'hotel_doublebed', 'hotel_singlebed_price', 'hotel_doublebed_price', 'hotel_payment')
             ->orderBy('id', 'asc')
             ->get();
 
