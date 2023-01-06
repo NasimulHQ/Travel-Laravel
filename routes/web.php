@@ -65,7 +65,8 @@ Route::get('search', [HotelController::class, 'search']);
 Route::get('book-now/{id}', [HotelController::class, 'bookNow'])->name('book-now');
 
 //Client Details
-Route::get('client-detail', [HotelController::class, 'clientdetail'])->name('client-detail');
+Route::get('client-detail/{client_id}', [HotelController::class, 'clientdetail'])->name('client-detail');
+Route::post('client-submit', [HotelController::class, 'clientsubmit'])->name('client-submit');
 
 //Flight Route
 Route::get('flightdash', [FlightController::class, 'index']);

@@ -77,7 +77,7 @@ Hotel Booking Details Page
                                     </div>
                                     
                                 </div>
-                                <a href="{{ route('client-detail') }}" class="btn btn-primary"
+                                <a href="{{ route('client-detail',['client_id'=>$hotel->hotel_title]) }}" class="btn btn-primary"
                                 style="margin: 20px 240px; padding:10px 30px; background: #983333">Continue</a>
                                 {{-- <a href="" class="btn btn-primary">Book</a> --}}
                             </div>

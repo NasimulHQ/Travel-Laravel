@@ -63,53 +63,53 @@ Hotel Booking Details Page
                                     @endif
                                     <div class="box">
                                         <div class="box-body">
-                                            <form action="" method="POST"
+                                            <form action="{{ route('client-submit')}}" method="POST"
                                                 enctype="multipart/form-data">
                                                 @csrf
-                                                {{-- <input type="hidden" name="flight_no" value="{{$flight_num}}"> --}}
+                                                <input type="hidden" name="client_no" value="{{$client_no}}">
                                                 <div class="form-group">
                                                     <label for="">Name</label>
-                                                    <input type="text" class="form-control" name="tr_name"
+                                                    <input type="text" class="form-control" name="cl_name"
                                                         placeholder="Enter Your Full Name">
-                                                    @error('tr_name')
+                                                    @error('cl_name')
                                                     <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="">Room Type</label>
-                                                    <select class="form-control" name="tr_seat">
+                                                    <select class="form-control" name="cl_bed">
                                                         <option selected value="SingleBed">Single Bed</option>
                                                         <option value="DoubleBed">Double Bed</option>
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="">NID Number:</label>
-                                                    <input type="text" class="form-control" name="tr_passportnum"
-                                                        placeholder="Enter your Passport Number">
-                                                    @error('tr_passportnum')
+                                                    <input type="text" class="form-control" name="cl_nid"
+                                                        placeholder="Enter your NID Number">
+                                                    @error('cl_nid')
                                                     <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="">Date of Birth</label>
-                                                    <input type="date" class="form-control" name="tr_date_of_birth">
-                                                    @error('tr_date_of_birth')
+                                                    <input type="date" class="form-control" name="cl_date_of_birth">
+                                                    @error('cl_date_of_birth')
                                                     <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="">City</label>
-                                                    <input type="text" class="form-control" name="tr_city"
+                                                    <input type="text" class="form-control" name="cl_city"
                                                         placeholder="Enter your City">
-                                                    @error('tr_city')
+                                                    @error('cl_city')
                                                     <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="">Country</label>
-                                                    <input type="text" class="form-control" name="tr_country"
+                                                    <input type="text" class="form-control" name="cl_country"
                                                         placeholder="Enter your Country Name">
-                                                    @error('tr_country')
+                                                    @error('cl_country')
                                                     <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
@@ -117,17 +117,17 @@ Hotel Booking Details Page
                                                 <h2>Contact Details</h2>
                                                 <div class="form-group">
                                                     <label for="">Email</label>
-                                                    <input type="text" class="form-control" name="tr_email"
+                                                    <input type="text" class="form-control" name="cl_email"
                                                         placeholder="Enter your Email">
-                                                    @error('tr_email')
+                                                    @error('cl_email')
                                                     <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="">Phone Number</label>
-                                                    <input type="number" class="form-control" name="tr_phone"
+                                                    <input type="number" class="form-control" name="cl_phone"
                                                         placeholder="Enter your Phone Number">
-                                                    @error('tr_phone')
+                                                    @error('cl_phone')
                                                     <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>

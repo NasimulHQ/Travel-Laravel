@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Clientbook;
 use App\Models\Hotel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -182,9 +183,49 @@ class HotelController extends Controller
         }
         return view('front-end.booknow', compact('hotel'));
     }
-    public function clientdetail()
+    public function clientdetail($client_no)
     {
-        return view('front-end.clientdetail');
+        return view('front-end.clientdetail', compact('client_no'));
+    }
+
+    //tarveler booking flight confirm with information
+    public function clientsubmit(Request $request)
+    {
+        $this->validate(
+            $request,
+            [
+                'cl_name' => 'required|min:3|max:199|string',
+                // 'tr_seat' => 'required|min:3|max:199|string',
+                'cl_nid' => 'required|min:3|max:199|string',
+                // 'tr_date_of_birth' => 'required|min:3|max:199|string',
+                // 'tr_expiry_date' => 'required|min:3|max:199|string',
+                'cl_city' => 'required|min:3|max:199|string',
+                'cl_country' => 'required|min:3|max:199|string',
+                'cl_email' => 'required|min:3|max:199|string',
+                'cl_phone' => 'required|min:3|max:199|string',
+
+            ]
+        );
+
+        $clientbooking = new Clientbook();
+        $clientbooking->client_no = $request->input('client_no');
+        $clientbooking->cl_name = $request->input('cl_name');
+        $clientbooking->cl_bed = $request->input('cl_bed');
+        $clientbooking->cl_nid = $request->input('cl_nid');
+        $clientbooking->cl_date_of_birth = $request->input('cl_date_of_birth');
+        $clientbooking->cl_city = $request->input('cl_city');
+        $clientbooking->cl_country = $request->input('cl_country');
+        $clientbooking->cl_email = $request->input('cl_email');
+        $clientbooking->cl_phone = $request->input('cl_phone');
+        $clientbooking->save();
+
+        // $send_mail = $request->input('tr_email');
+        // $flight_no = $request->input('flight_no');
+        // $tr_seat = $request->input('tr_seat');
+        // $title = "Congratulations! Successfully you booked an Air Flight";
+
+        // Mail::to($send_mail)->send(new FlightBookMail($flight_no, $tr_seat, $title));
+        return redirect()->back()->with('status', 'Flight book successfully done, check your Email');
     }
 
 
