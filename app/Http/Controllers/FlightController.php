@@ -251,7 +251,8 @@ class FlightController extends Controller
         $send_mail = $request->input('tr_email');
         $flight_no = $request->input('flight_no');
         $tr_seat = $request->input('tr_seat');
-        $title = "Congratulations! Successfully you booked an Air Flight";
+        $tr_name = $request->input('tr_name');
+        $title = "Congratulations! $tr_name Successfully you booked an Air Flight";
 
         Mail::to($send_mail)->send(new FlightBookMail($flight_no, $tr_seat, $title));
         return redirect()->back()->with('status', 'Flight book successfully done, check your Email');

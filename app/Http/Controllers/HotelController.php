@@ -221,12 +221,13 @@ class HotelController extends Controller
         $clientbooking->cl_phone = $request->input('cl_phone');
         $clientbooking->save();
 
-        // $send_mail = $request->input('cl_email');
-        // $client_no = $request->input('client_no');
-        // $cl_bed = $request->input('cl_bed');
-        // $title = "Congratulations! Successfully you booked a Hotel";
+        $send_mail = $request->input('cl_email');
+        $client_no = $request->input('client_no');
+        $cl_bed = $request->input('cl_bed');
+        $cl_name = $request->input('cl_name');
+        $title = "Congratulations! $cl_name Successfully you booked a Hotel";
 
-        // Mail::to($send_mail)->send(new HotelBookMail($client_no, $cl_bed, $title));
+        Mail::to($send_mail)->send(new HotelBookMail($client_no, $cl_bed, $title));
         return redirect()->back()->with('status', 'Flight book successfully done, check your Email');
     }
 
