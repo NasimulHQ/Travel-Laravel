@@ -59,10 +59,27 @@ Hotel Booking Details Page
                             <div class="card-inner">
                                 <div class="header">
                                     <h2>Name: {{$hotel->hotel_title}}</h2>
-                                    <h3>Location: {{$hotel->hotel_location}}</h2>
-                                    <h3>Price: {{$hotel->hotel_price}}</h2>
+                                    <p>Short Des: {{$hotel->hotel_description}}</p>
+
+                                    <div class="header-body">
+                                    <h4>Rating: {{$hotel->hotel_rating}} Star</h4>
+                                    <h4>Location: {{$hotel->hotel_location}}</h4>
+                                    <div class="col-md-6">
+                                        <h4>Single Bed: {{$hotel->hotel_singlebed}}</h4>
+                                        <h4>Double Bed: {{$hotel->hotel_doublebed}}</h4>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h4>SingleBed Price: {{$hotel->hotel_singlebed_price}}</h4>
+                                        <h4>DoubleBed Price: {{$hotel->hotel_doublebed_price}}</h4>
+                                    </div>
+                                    
+                                    <h4>Payment System: {{$hotel->hotel_payment}}</h4>    
+                                    </div>
+                                    
                                 </div>
-                                <a href="" class="btn btn-primary">Book</a>
+                                <a href="{{ route('client-detail') }}" class="btn btn-primary"
+                                style="margin: 20px 240px; padding:10px 30px; background: #983333">Continue</a>
+                                {{-- <a href="" class="btn btn-primary">Book</a> --}}
                             </div>
                         </div>
                     </div>

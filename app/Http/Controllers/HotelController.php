@@ -182,4 +182,10 @@ class HotelController extends Controller
         }
         return view('front-end.booknow', compact('hotel'));
     }
+    public function clientdetail()
+    {
+        return view('front-end.clientdetail');
+    }
+
+
 }

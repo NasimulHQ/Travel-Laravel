@@ -64,6 +64,9 @@ Route::get('search', [HotelController::class, 'search']);
 //Hotel details
 Route::get('book-now/{id}', [HotelController::class, 'bookNow'])->name('book-now');
 
+//Client Details
+Route::get('client-detail', [HotelController::class, 'clientdetail'])->name('client-detail');
+
 //Flight Route
 Route::get('flightdash', [FlightController::class, 'index']);
 Route::get('add-flight', [FlightController::class, 'create']);
