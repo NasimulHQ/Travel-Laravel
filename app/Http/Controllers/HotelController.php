@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Clientbook;
+use App\Mail\HotelBookMail;
 use App\Models\Hotel;
+use App\Models\Clientbook;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Mail;
 
 class HotelController extends Controller
 {
@@ -188,7 +190,7 @@ class HotelController extends Controller
         return view('front-end.clientdetail', compact('client_no'));
     }
 
-    //tarveler booking flight confirm with information
+    //Hotel booking client confirm with information
     public function clientsubmit(Request $request)
     {
         $this->validate(
@@ -219,13 +221,26 @@ class HotelController extends Controller
         $clientbooking->cl_phone = $request->input('cl_phone');
         $clientbooking->save();
 
-        // $send_mail = $request->input('tr_email');
-        // $flight_no = $request->input('flight_no');
-        // $tr_seat = $request->input('tr_seat');
-        // $title = "Congratulations! Successfully you booked an Air Flight";
+        // $send_mail = $request->input('cl_email');
+        // $client_no = $request->input('client_no');
+        // $cl_bed = $request->input('cl_bed');
+        // $title = "Congratulations! Successfully you booked a Hotel";
 
-        // Mail::to($send_mail)->send(new FlightBookMail($flight_no, $tr_seat, $title));
+        // Mail::to($send_mail)->send(new HotelBookMail($client_no, $cl_bed, $title));
         return redirect()->back()->with('status', 'Flight book successfully done, check your Email');
+    }
+
+    //Book hotel index (Dashboard)
+    public function bookhotel()
+    {
+        $bookhotel = Clientbook::all();
+        return view('admin.booked.hotelindex', compact('bookhotel'));
+    }
+    public function destroybookhotel($id)
+    {
+        $bookhotel = Clientbook::find($id);
+        $bookhotel->delete();
+        return redirect()->back()->with('status', 'Book hotel delete successfully done');
     }
 
 

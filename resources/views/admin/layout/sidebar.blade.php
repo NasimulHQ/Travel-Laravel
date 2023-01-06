@@ -29,6 +29,7 @@
             
 
             <li><a href="{{ route('book-flight')}}"><i class="fa fa-laptop"></i> <span>Book Flight</span></a></li>
+            <li><a href="{{ route('book-hotel')}}"><i class="fa fa-laptop"></i> <span>Book Hotel</span></a></li>
             <li><a href="{{ url('flightdash')}}"><i class="fa fa-laptop"></i> <span>Flight</span></a></li>
             <li><a href="{{ url('hotels')}}"><i class="fa fa-laptop"></i> <span>Hotel</span></a></li>
             <li><a href="{{ url('gallerys')}}"><i class="fa fa-laptop"></i> <span>Gallery</span></a></li>

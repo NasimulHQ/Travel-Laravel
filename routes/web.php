@@ -68,6 +68,11 @@ Route::get('book-now/{id}', [HotelController::class, 'bookNow'])->name('book-now
 Route::get('client-detail/{client_id}', [HotelController::class, 'clientdetail'])->name('client-detail');
 Route::post('client-submit', [HotelController::class, 'clientsubmit'])->name('client-submit');
 
+//Book Hotel Dashboard index
+Route::get('book-hotel', [HotelController::class, 'bookhotel'])->name('book-hotel');
+Route::get('delete-bookhotel/{id}', [HotelController::class, 'destroybookhotel']);
+
+
 //Flight Route
 Route::get('flightdash', [FlightController::class, 'index']);
 Route::get('add-flight', [FlightController::class, 'create']);
